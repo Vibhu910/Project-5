@@ -6,26 +6,16 @@ static sector_t prev_src_blkaddr = 0;
 static unsigned int seq_count = 0;
 static int in_scan_sequence = 0;
 
-void init_lru(struct list_head *lru_head, unsigned int num_blocks)
+void
+my_cache_hit(struct block_device *cache_blkdev, struct cacheblock *block,
+        struct list_head *lru_head)
 {
-    unsigned int i;
-    struct cacheblock *block;
-    
-    INIT_LIST_HEAD(lru_head);
-    
-    for (i = 0; i < num_blocks; i++) {
-        block = (struct cacheblock *)kvmalloc(sizeof(struct cacheblock), GFP_KERNEL);
-        block->cache_block_addr = i << BLOCK_SHIFT;
-        block->src_block_addr = 0;
-        list_add(&block->list, lru_head);
-    }
-    
-    prev_src_blkaddr = 0;
-    seq_count = 0;
-    in_scan_sequence = 0;
+    list_move_tail(&block->list, lru_head);
+    do_read(cache_blkdev, block->cache_block_addr);
 }
 
-struct cacheblock* my_cache_miss(struct block_device *src_blkdev, struct block_device *cache_blkdev,
+struct cacheblock*
+my_cache_miss(struct block_device *src_blkdev, struct block_device *cache_blkdev,
         sector_t src_blkaddr, struct list_head *lru_head)
 {
     struct cacheblock *block;
@@ -67,14 +57,28 @@ struct cacheblock* my_cache_miss(struct block_device *src_blkdev, struct block_d
     return block;
 }
 
-void my_cache_hit(struct block_device *cache_blkdev, struct cacheblock *block,
-        struct list_head *lru_head)
+void
+init_lru(struct list_head *lru_head, unsigned int num_blocks)
 {
-    list_move_tail(&block->list, lru_head);
-    do_read(cache_blkdev, block->cache_block_addr);
+    unsigned int i;
+    struct cacheblock *block;
+    
+    INIT_LIST_HEAD(lru_head);
+    
+    for (i = 0; i < num_blocks; i++) {
+        block = (struct cacheblock *)kvmalloc(sizeof(struct cacheblock), GFP_KERNEL);
+        block->cache_block_addr = i << BLOCK_SHIFT;
+        block->src_block_addr = 0;
+        list_add(&block->list, lru_head);
+    }
+    
+    prev_src_blkaddr = 0;
+    seq_count = 0;
+    in_scan_sequence = 0;
 }
 
-void free_lru(struct list_head *lru_head)
+void
+free_lru(struct list_head *lru_head)
 {
     struct cacheblock *block;
     
