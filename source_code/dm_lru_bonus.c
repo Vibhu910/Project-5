@@ -2,6 +2,10 @@
 #include <linux/slab.h>
 #include "dm_cache.h"
 
+#ifndef BLOCK_SHIFT
+#define BLOCK_SHIFT 3  /* 8 sectors = 2^3 */
+#endif
+
 static sector_t prev_src_blkaddr = 0;
 static unsigned int seq_count = 0;
 static int in_scan_sequence = 0;
@@ -33,6 +37,9 @@ my_cache_miss(struct block_device *src_blkdev, struct block_device *cache_blkdev
             return NULL;
         }
         in_scan_sequence = 0;
+        seq_count = 0;  /* Reset sequence count when exiting scan sequence */
+        prev_src_blkaddr = src_blkaddr;  /* Update to current address for next comparison */
+        /* Continue to cache this block */
     }
     
     if (is_sequential) {
