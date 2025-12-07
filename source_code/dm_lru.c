@@ -2,16 +2,14 @@
 #include <linux/slab.h>
 #include "dm_cache.h"
 
-void
-my_cache_hit(struct block_device *cache_blkdev, struct cacheblock *block,
+void my_cache_hit(struct block_device *cache_blkdev, struct cacheblock *block,
         struct list_head *lru_head)
 {
     list_move_tail(&block->list, lru_head);
     do_read(cache_blkdev, block->cache_block_addr);
 }
 
-struct cacheblock*
-my_cache_miss(struct block_device *src_blkdev, struct block_device *cache_blkdev,
+struct cacheblock* my_cache_miss(struct block_device *src_blkdev, struct block_device *cache_blkdev,
         sector_t src_blkaddr, struct list_head *lru_head)
 {
     struct cacheblock *block;
@@ -24,8 +22,7 @@ my_cache_miss(struct block_device *src_blkdev, struct block_device *cache_blkdev
     return block;
 }
 
-void
-init_lru(struct list_head *lru_head, unsigned int num_blocks)
+void init_lru(struct list_head *lru_head, unsigned int num_blocks)
 {
     unsigned int i;
     struct cacheblock *block;
@@ -40,8 +37,7 @@ init_lru(struct list_head *lru_head, unsigned int num_blocks)
     }
 }
 
-void
-free_lru(struct list_head *lru_head)
+void free_lru(struct list_head *lru_head)
 {
     struct cacheblock *block;
     
