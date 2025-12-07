@@ -12,12 +12,15 @@ void my_cache_hit(struct block_device *cache_blkdev, struct cacheblock *block,
     list_move_tail(&block->list, lru_head);
     do_read(cache_blkdev, block->cache_block_addr);
 
-    if (seq_count > 0 && block->src_block_addr == prev_src_blkaddr + 1)
+    sector_t block_size = 1 << BLOCK_SHIFT;
+    sector_t current_sector = block->src_block_addr << BLOCK_SHIFT;
+    
+    if (seq_count > 0 && current_sector == prev_src_blkaddr + block_size)
         seq_count++;
     else
         seq_count = 1;
 
-    prev_src_blkaddr = block->src_block_addr;
+    prev_src_blkaddr = current_sector;
 
     if (seq_count >= 10)
         in_scan_sequence = 1;
@@ -28,7 +31,8 @@ struct cacheblock* my_cache_miss(struct block_device *src_blkdev,
                                  sector_t src_blkaddr,
                                  struct list_head *lru_head)
 {
-    int is_seq = (seq_count > 0 && src_blkaddr == prev_src_blkaddr + 1);
+    sector_t block_size = 1 << BLOCK_SHIFT;
+    int is_seq = (seq_count > 0 && src_blkaddr == prev_src_blkaddr + block_size);
 
     if (in_scan_sequence) {
         if (is_seq) {
@@ -53,7 +57,7 @@ struct cacheblock* my_cache_miss(struct block_device *src_blkdev,
     struct cacheblock *block = list_first_entry(lru_head, struct cacheblock, list);
     list_move_tail(&block->list, lru_head);
 
-    block->src_block_addr = src_blkaddr;
+    block->src_block_addr = src_blkaddr >> BLOCK_SHIFT;
 
     do_read(src_blkdev, src_blkaddr);
     do_write(cache_blkdev, block->cache_block_addr);
@@ -85,3 +89,4 @@ void free_lru(struct list_head *lru_head)
         kvfree(b);
     }
 }
+
