@@ -1,0 +1,220 @@
+[*] Compiling scheduler BPF program...
+clang -g -O2 -target bpf -D__TARGET_ARCH_arm64 -I/usr/include/aarch64-linux-gnu -I. -c scheduler_deep_tracer.bpf.c -o scheduler_deep_tracer.bpf.o
+In file included from scheduler_deep_tracer.bpf.c:1:
+./vmlinux.h:69074:2: warning: declaration does not declare anything [-Wmissing-declarations]
+ 69074 |         struct aes_enckey;
+       |         ^~~~~~~~~~~~~~~~~
+./vmlinux.h:85274:3: warning: declaration does not declare anything [-Wmissing-declarations]
+ 85274 |                 struct ns_tree;
+       |                 ^~~~~~~~~~~~~~
+./vmlinux.h:108616:2: warning: declaration does not declare anything [-Wmissing-declarations]
+ 108616 |         struct __filename_head;
+        |         ^~~~~~~~~~~~~~~~~~~~~~
+./vmlinux.h:152580:2: warning: declaration does not declare anything [-Wmissing-declarations]
+ 152580 |         union pipe_index;
+        |         ^~~~~~~~~~~~~~~~
+./vmlinux.h:170827:4: warning: declaration does not declare anything [-Wmissing-declarations]
+ 170827 |                         struct freelist_counters;
+        |                         ^~~~~~~~~~~~~~~~~~~~~~~~
+scheduler_deep_tracer.bpf.c:140:51: error: no member named 'min_vruntime' in 'struct cfs_rq'
+  140 |         e->cfs_min_vruntime  = BPF_CORE_READ(cfs, min_vruntime);
+      |                                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:526:17: note: expanded from macro 'BPF_CORE_READ'
+  526 |         ___type((src), a, ##__VA_ARGS__) __r;                               \
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:392:49: note: expanded from macro '___type'
+  392 | #define ___type(...) __typeof_unqual__(___arrow(__VA_ARGS__))
+      |                                        ~~~~~~~~~^~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:389:64: note: expanded from macro '___arrow'
+  389 | #define ___arrow(...) ___apply(___arrow, ___narg(__VA_ARGS__))(__VA_ARGS__)
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:380:28: note: expanded from macro '___arrow2'
+  380 | #define ___arrow2(a, b) a->b
+      |                         ~  ^
+scheduler_deep_tracer.bpf.c:140:51: error: no member named 'min_vruntime' in 'struct cfs_rq'
+  140 |         e->cfs_min_vruntime  = BPF_CORE_READ(cfs, min_vruntime);
+      |                                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:527:34: note: expanded from macro 'BPF_CORE_READ'
+  527 |         BPF_CORE_READ_INTO(&__r, (src), a, ##__VA_ARGS__);                  \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:435:20: note: expanded from macro 'BPF_CORE_READ_INTO'
+  434 |         ___core_read(bpf_core_read, bpf_core_read,                          \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  435 |                      dst, (src), a, ##__VA_ARGS__)                          \
+      |                      ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:426:18: note: expanded from macro '___core_read'
+  425 |         ___apply(___core_read, ___empty(__VA_ARGS__))(fn, fn_ptr, dst,      \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  426 |                                                       src, a, ##__VA_ARGS__)
+      |                                                       ~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:419:38: note: expanded from macro '___core_read0'
+  419 |         ___read(fn, dst, ___type(src), src, a);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+/usr/include/bpf/bpf_core_read.h:400:61: note: expanded from macro '___read'
+  400 |         read_fn((void *)(dst), sizeof(*(dst)), &((src_type)(src))->accessor)
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:312:79: note: expanded from macro 'bpf_core_read'
+  312 |         bpf_probe_read_kernel(dst, sz, (const void *)__builtin_preserve_access_index(src))
+      |                                                                                      ^~~
+scheduler_deep_tracer.bpf.c:141:51: error: no member named 'nr_running' in 'struct cfs_rq'
+  141 |         e->cfs_nr_running    = BPF_CORE_READ(cfs, nr_running);
+      |                                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:526:17: note: expanded from macro 'BPF_CORE_READ'
+  526 |         ___type((src), a, ##__VA_ARGS__) __r;                               \
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:392:49: note: expanded from macro '___type'
+  392 | #define ___type(...) __typeof_unqual__(___arrow(__VA_ARGS__))
+      |                                        ~~~~~~~~~^~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:389:64: note: expanded from macro '___arrow'
+  389 | #define ___arrow(...) ___apply(___arrow, ___narg(__VA_ARGS__))(__VA_ARGS__)
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:380:28: note: expanded from macro '___arrow2'
+  380 | #define ___arrow2(a, b) a->b
+      |                         ~  ^
+scheduler_deep_tracer.bpf.c:141:51: error: no member named 'nr_running' in 'struct cfs_rq'
+  141 |         e->cfs_nr_running    = BPF_CORE_READ(cfs, nr_running);
+      |                                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:527:34: note: expanded from macro 'BPF_CORE_READ'
+  527 |         BPF_CORE_READ_INTO(&__r, (src), a, ##__VA_ARGS__);                  \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:435:20: note: expanded from macro 'BPF_CORE_READ_INTO'
+  434 |         ___core_read(bpf_core_read, bpf_core_read,                          \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  435 |                      dst, (src), a, ##__VA_ARGS__)                          \
+      |                      ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:426:18: note: expanded from macro '___core_read'
+  425 |         ___apply(___core_read, ___empty(__VA_ARGS__))(fn, fn_ptr, dst,      \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  426 |                                                       src, a, ##__VA_ARGS__)
+      |                                                       ~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:419:38: note: expanded from macro '___core_read0'
+  419 |         ___read(fn, dst, ___type(src), src, a);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+/usr/include/bpf/bpf_core_read.h:400:61: note: expanded from macro '___read'
+  400 |         read_fn((void *)(dst), sizeof(*(dst)), &((src_type)(src))->accessor)
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:312:79: note: expanded from macro 'bpf_core_read'
+  312 |         bpf_probe_read_kernel(dst, sz, (const void *)__builtin_preserve_access_index(src))
+      |                                                                                      ^~~
+scheduler_deep_tracer.bpf.c:142:51: error: no member named 'h_nr_running' in 'struct cfs_rq'
+  142 |         e->cfs_h_nr_running  = BPF_CORE_READ(cfs, h_nr_running);
+      |                                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:526:17: note: expanded from macro 'BPF_CORE_READ'
+  526 |         ___type((src), a, ##__VA_ARGS__) __r;                               \
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:392:49: note: expanded from macro '___type'
+  392 | #define ___type(...) __typeof_unqual__(___arrow(__VA_ARGS__))
+      |                                        ~~~~~~~~~^~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:389:64: note: expanded from macro '___arrow'
+  389 | #define ___arrow(...) ___apply(___arrow, ___narg(__VA_ARGS__))(__VA_ARGS__)
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:380:28: note: expanded from macro '___arrow2'
+  380 | #define ___arrow2(a, b) a->b
+      |                         ~  ^
+scheduler_deep_tracer.bpf.c:142:51: error: no member named 'h_nr_running' in 'struct cfs_rq'
+  142 |         e->cfs_h_nr_running  = BPF_CORE_READ(cfs, h_nr_running);
+      |                                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:527:34: note: expanded from macro 'BPF_CORE_READ'
+  527 |         BPF_CORE_READ_INTO(&__r, (src), a, ##__VA_ARGS__);                  \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:435:20: note: expanded from macro 'BPF_CORE_READ_INTO'
+  434 |         ___core_read(bpf_core_read, bpf_core_read,                          \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  435 |                      dst, (src), a, ##__VA_ARGS__)                          \
+      |                      ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:426:18: note: expanded from macro '___core_read'
+  425 |         ___apply(___core_read, ___empty(__VA_ARGS__))(fn, fn_ptr, dst,      \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  426 |                                                       src, a, ##__VA_ARGS__)
+      |                                                       ~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:419:38: note: expanded from macro '___core_read0'
+  419 |         ___read(fn, dst, ___type(src), src, a);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+/usr/include/bpf/bpf_core_read.h:400:61: note: expanded from macro '___read'
+  400 |         read_fn((void *)(dst), sizeof(*(dst)), &((src_type)(src))->accessor)
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:312:79: note: expanded from macro 'bpf_core_read'
+  312 |         bpf_probe_read_kernel(dst, sz, (const void *)__builtin_preserve_access_index(src))
+      |                                                                                      ^~~
+scheduler_deep_tracer.bpf.c:143:51: error: no member named 'exec_clock' in 'struct cfs_rq'
+  143 |         e->cfs_exec_clock    = BPF_CORE_READ(cfs, exec_clock);
+      |                                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:526:17: note: expanded from macro 'BPF_CORE_READ'
+  526 |         ___type((src), a, ##__VA_ARGS__) __r;                               \
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:392:49: note: expanded from macro '___type'
+  392 | #define ___type(...) __typeof_unqual__(___arrow(__VA_ARGS__))
+      |                                        ~~~~~~~~~^~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:389:64: note: expanded from macro '___arrow'
+  389 | #define ___arrow(...) ___apply(___arrow, ___narg(__VA_ARGS__))(__VA_ARGS__)
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:380:28: note: expanded from macro '___arrow2'
+  380 | #define ___arrow2(a, b) a->b
+      |                         ~  ^
+scheduler_deep_tracer.bpf.c:143:51: error: no member named 'exec_clock' in 'struct cfs_rq'
+  143 |         e->cfs_exec_clock    = BPF_CORE_READ(cfs, exec_clock);
+      |                                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:527:34: note: expanded from macro 'BPF_CORE_READ'
+  527 |         BPF_CORE_READ_INTO(&__r, (src), a, ##__VA_ARGS__);                  \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:435:20: note: expanded from macro 'BPF_CORE_READ_INTO'
+  434 |         ___core_read(bpf_core_read, bpf_core_read,                          \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  435 |                      dst, (src), a, ##__VA_ARGS__)                          \
+      |                      ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:426:18: note: expanded from macro '___core_read'
+  425 |         ___apply(___core_read, ___empty(__VA_ARGS__))(fn, fn_ptr, dst,      \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  426 |                                                       src, a, ##__VA_ARGS__)
+      |                                                       ~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:419:38: note: expanded from macro '___core_read0'
+  419 |         ___read(fn, dst, ___type(src), src, a);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+/usr/include/bpf/bpf_core_read.h:400:61: note: expanded from macro '___read'
+  400 |         read_fn((void *)(dst), sizeof(*(dst)), &((src_type)(src))->accessor)
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:312:79: note: expanded from macro 'bpf_core_read'
+  312 |         bpf_probe_read_kernel(dst, sz, (const void *)__builtin_preserve_access_index(src))
+      |                                                                                      ^~~
+scheduler_deep_tracer.bpf.c:145:51: error: no member named 'avg_vruntime' in 'struct cfs_rq'
+  145 |         e->cfs_avg_vruntime  = BPF_CORE_READ(cfs, avg_vruntime);
+      |                                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:526:17: note: expanded from macro 'BPF_CORE_READ'
+  526 |         ___type((src), a, ##__VA_ARGS__) __r;                               \
+      |         ~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:392:49: note: expanded from macro '___type'
+  392 | #define ___type(...) __typeof_unqual__(___arrow(__VA_ARGS__))
+      |                                        ~~~~~~~~~^~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:389:64: note: expanded from macro '___arrow'
+  389 | #define ___arrow(...) ___apply(___arrow, ___narg(__VA_ARGS__))(__VA_ARGS__)
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:380:28: note: expanded from macro '___arrow2'
+  380 | #define ___arrow2(a, b) a->b
+      |                         ~  ^
+scheduler_deep_tracer.bpf.c:145:51: error: no member named 'avg_vruntime' in 'struct cfs_rq'
+  145 |         e->cfs_avg_vruntime  = BPF_CORE_READ(cfs, avg_vruntime);
+      |                                ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:527:34: note: expanded from macro 'BPF_CORE_READ'
+  527 |         BPF_CORE_READ_INTO(&__r, (src), a, ##__VA_ARGS__);                  \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:435:20: note: expanded from macro 'BPF_CORE_READ_INTO'
+  434 |         ___core_read(bpf_core_read, bpf_core_read,                          \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  435 |                      dst, (src), a, ##__VA_ARGS__)                          \
+      |                      ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:426:18: note: expanded from macro '___core_read'
+  425 |         ___apply(___core_read, ___empty(__VA_ARGS__))(fn, fn_ptr, dst,      \
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  426 |                                                       src, a, ##__VA_ARGS__)
+      |                                                       ~~~~~^~~~~~~~~~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:419:38: note: expanded from macro '___core_read0'
+  419 |         ___read(fn, dst, ___type(src), src, a);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~
+/usr/include/bpf/bpf_core_read.h:400:61: note: expanded from macro '___read'
+  400 |         read_fn((void *)(dst), sizeof(*(dst)), &((src_type)(src))->accessor)
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~
+/usr/include/bpf/bpf_core_read.h:312:79: note: expanded from macro 'bpf_core_read'
+  312 |         bpf_probe_read_kernel(dst, sz, (const void *)__builtin_preserve_access_index(src))
+      |                                                                                      ^~~
+5 warnings and 10 errors generated.
+make: *** [Makefile:26: scheduler_deep_tracer.bpf.o] Error 1
