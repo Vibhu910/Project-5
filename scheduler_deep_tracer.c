@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdarg.h>
 #include <signal.h>
 #include <unistd.h>
 #include <time.h>
@@ -414,12 +415,21 @@ static int handle_event(void *ctx, void *data, size_t sz)
 static volatile int stop = 0;
 static void sig_handler(int sig) { stop = 1; }
 
+static int libbpf_print_fn(enum libbpf_print_level level, const char *fmt, va_list ap)
+{
+    (void)level;
+    return vfprintf(stderr, fmt, ap);
+}
+
 int main(int argc, char **argv)
 {
     int duration = 30;
     if (argc > 1) duration = atoi(argv[1]);
 
-    libbpf_set_print(NULL);
+    /* Do not use NULL here — without this, verifier/kernel errors are hidden
+     * and load failures only show "Failed to load BPF skeleton: -22".
+     */
+    libbpf_set_print(libbpf_print_fn);
 
     struct scheduler_deep_tracer_bpf *skel = scheduler_deep_tracer_bpf__open();
     if (!skel) {
@@ -429,7 +439,11 @@ int main(int argc, char **argv)
 
     int     err = scheduler_deep_tracer_bpf__load(skel);
     if (err) {
-        fprintf(stderr, "Failed to load BPF skeleton: %d\n", err);
+        int e = err < 0 ? -err : err;
+        fprintf(stderr, "Failed to load BPF skeleton: %d (%s)\n", err, strerror(e));
+        fprintf(stderr,
+                "Hint: run `make clean && make` on this same machine (need kernel BTF).\n"
+                "      Do not copy .bpf.o from another OS/CPU; BPF is arch-specific.\n");
         goto cleanup;
     }
 

@@ -1,4 +1,14 @@
+/* bpftool-generated vmlinux.h contains standalone forward decls that trigger
+ * -Wmissing-declarations; suppress only for this include.
+ */
+#if defined(__clang__)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wmissing-declarations"
+#endif
 #include "vmlinux.h"
+#if defined(__clang__)
+#pragma clang diagnostic pop
+#endif
 #include <bpf/bpf_helpers.h>
 #include <bpf/bpf_tracing.h>
 #include <bpf/bpf_core_read.h>
@@ -126,9 +136,10 @@ struct sched_event {
     __s32  wake_cpu;
 };
 
+/* Ringbuf size in bytes: must be power of 2 and page-aligned (kernel EINVAL). */
 struct {
     __uint(type,        BPF_MAP_TYPE_RINGBUF);
-    __uint(max_entries, 16 * 1024 * 1024);
+    __uint(max_entries, 1U << 24); /* 16 MiB */
 } events SEC(".maps");
 
 struct wait_queue_info {
