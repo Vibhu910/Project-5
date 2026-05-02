@@ -1,64 +1,7 @@
-/* bpftool-generated vmlinux.h contains standalone forward decls that trigger
- * -Wmissing-declarations; suppress only for this include.
- */
-#if defined(__clang__)
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wmissing-declarations"
-#endif
 #include "vmlinux.h"
-#if defined(__clang__)
-#pragma clang diagnostic pop
-#endif
 #include <bpf/bpf_helpers.h>
 #include <bpf/bpf_tracing.h>
 #include <bpf/bpf_core_read.h>
-
-/*
- * CO-RE reads must compile against local BTF/vmlinux.h. Some trees expose an
- * incomplete struct cfs_rq, and newer kernels renamed several fields (e.g.
- * nr_running→nr_queued, h_nr_running→h_nr_queued, avg_vruntime→sum_w_vruntime).
- * Use small matching structs with preserve_access_index so Clang sees valid
- * members while libbpf relocates against the running kernel.
- */
-struct cfs_rq___co_min {
-	unsigned long min_vruntime;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_exec {
-	__u64 exec_clock;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_load {
-	struct load_weight load;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_nr_run {
-	unsigned int nr_running;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_nr_q {
-	unsigned int nr_queued;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_hnr_old {
-	unsigned int h_nr_running;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_hnr_q {
-	unsigned int h_nr_queued;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_avg {
-	__s64 avg_vruntime;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_sumw {
-	__s64 sum_w_vruntime;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_rq {
-	struct rq *rq;
-} __attribute__((preserve_access_index));
 
 #define TASK_COMM_LEN 16
 #define FILENAME_LEN  64
@@ -96,13 +39,6 @@ struct sched_event {
     __u64  load_weight;
     __u32  load_inv_weight;
 
-    __u64  cfs_min_vruntime;
-    __u64  cfs_avg_vruntime;
-    __u32  cfs_nr_running;
-    __u32  cfs_h_nr_running;
-    __u64  cfs_exec_clock;
-    __u64  cfs_load_weight;
-
     __u8   on_rq;
     __u64  last_update_rq_clock;
 
@@ -131,8 +67,6 @@ struct sched_event {
     __u32  policy;
     __s32  nice;
     __u32  prev_task_state;
-    __u32  rq_nr_running;
-    __u64  rq_clock;
     __s32  wake_cpu;
 };
 
@@ -164,7 +98,7 @@ struct {
     __type(value, __u32);
 } wait_queue_size_map SEC(".maps");
 
-/* Populates a sched_event with CFS sched_entity and cfs_rq fields from a task_struct. */
+/* Populates a sched_event with CFS sched_entity fields from a task_struct. */
 static __always_inline void fill_se(struct sched_event *e,
                                     struct task_struct *t)
 {
@@ -192,38 +126,6 @@ static __always_inline void fill_se(struct sched_event *e,
     
     e->last_update_rq_clock = 0;
 
-    struct cfs_rq *cfs = BPF_CORE_READ(t, se.cfs_rq);
-    if (cfs) {
-        const void *cfsp = (const void *)cfs;
-
-        e->cfs_min_vruntime = BPF_CORE_READ((struct cfs_rq___co_min *)cfsp,
-                                            min_vruntime);
-        if (bpf_core_field_exists(struct cfs_rq___co_nr_q, nr_queued))
-            e->cfs_nr_running = BPF_CORE_READ((struct cfs_rq___co_nr_q *)cfsp,
-                                              nr_queued);
-        else
-            e->cfs_nr_running = BPF_CORE_READ((struct cfs_rq___co_nr_run *)cfsp,
-                                              nr_running);
-
-        if (bpf_core_field_exists(struct cfs_rq___co_hnr_q, h_nr_queued))
-            e->cfs_h_nr_running = BPF_CORE_READ((struct cfs_rq___co_hnr_q *)cfsp,
-                                                h_nr_queued);
-        else
-            e->cfs_h_nr_running =
-                BPF_CORE_READ((struct cfs_rq___co_hnr_old *)cfsp, h_nr_running);
-
-        e->cfs_exec_clock = BPF_CORE_READ((struct cfs_rq___co_exec *)cfsp,
-                                          exec_clock);
-        e->cfs_load_weight = BPF_CORE_READ((struct cfs_rq___co_load *)cfsp,
-                                           load.weight);
-        if (bpf_core_field_exists(struct cfs_rq___co_sumw, sum_w_vruntime))
-            e->cfs_avg_vruntime =
-                BPF_CORE_READ((struct cfs_rq___co_sumw *)cfsp, sum_w_vruntime);
-        else
-            e->cfs_avg_vruntime =
-                BPF_CORE_READ((struct cfs_rq___co_avg *)cfsp, avg_vruntime);
-    }
-
     e->task_state = BPF_CORE_READ(t, __state);
 }
 
@@ -239,18 +141,6 @@ static __always_inline void fill_prev_se(struct sched_event *e,
     e->prev_load_weight  = BPF_CORE_READ(t, se.load.weight);
     e->prev_task_state   = BPF_CORE_READ(t, __state);
     bpf_core_read_str(e->prev_comm, sizeof(e->prev_comm), &t->comm);
-}
-
-/* Fills rq-level stats (nr_running, clock) from the task's cfs_rq->rq. */
-static __always_inline void fill_rq(struct sched_event *e,
-                                    struct task_struct *t)
-{
-    struct cfs_rq *cfs = BPF_CORE_READ(t, se.cfs_rq);
-    if (!cfs) return;
-    struct rq *rq = BPF_CORE_READ((struct cfs_rq___co_rq *)cfs, rq);
-    if (!rq) return;
-    e->rq_nr_running = BPF_CORE_READ(rq, nr_running);
-    e->rq_clock      = BPF_CORE_READ(rq, clock);
 }
 
 /* Copies current task's pid/tgid/comm into a wait_queue_info. */
@@ -356,7 +246,6 @@ int BPF_PROG(handle_sched_switch,
     e->preempt      = preempt ? 1 : 0;
 
     fill_se(e, next);
-    fill_rq(e, next);
 
     fill_prev_se(e, prev);
 
@@ -376,7 +265,6 @@ int BPF_PROG(handle_wakeup, struct task_struct *p)
     e->cpu          = bpf_get_smp_processor_id();
 
     fill_se(e, p);
-    fill_rq(e, p);
     e->wake_cpu     = BPF_CORE_READ(p, wake_cpu);
 
     bpf_ringbuf_submit(e, 0);
@@ -395,7 +283,6 @@ int BPF_PROG(handle_wakeup_new, struct task_struct *p)
     e->cpu          = bpf_get_smp_processor_id();
 
     fill_se(e, p);
-    fill_rq(e, p);
     e->wake_cpu     = BPF_CORE_READ(p, wake_cpu);
 
     bpf_ringbuf_submit(e, 0);
@@ -418,8 +305,6 @@ int BPF_PROG(handle_migrate,
     e->dest_cpu     = dest_cpu;
 
     fill_se(e, p);
-    fill_rq(e, p);
-
     bpf_ringbuf_submit(e, 0);
     return 0;
 }
@@ -438,7 +323,6 @@ int BPF_PROG(handle_fork,
     e->cpu          = bpf_get_smp_processor_id();
 
     fill_se(e, child);
-    fill_rq(e, child);
     fill_prev_se(e, parent);
     e->child_pid = BPF_CORE_READ(child, pid);
 
@@ -458,7 +342,6 @@ int BPF_PROG(handle_exit, struct task_struct *p)
     e->cpu          = bpf_get_smp_processor_id();
 
     fill_se(e, p);
-    fill_rq(e, p);
 
     __u32 tgid = BPF_CORE_READ(p, tgid);
     struct wait_queue_info *wq_info = bpf_map_lookup_elem(&wait_queue_map, &tgid);
@@ -486,7 +369,6 @@ int BPF_PROG(handle_exec,
     e->cpu          = bpf_get_smp_processor_id();
 
     fill_se(e, p);
-    fill_rq(e, p);
 
     if (bprm)
         bpf_core_read_str(e->filename, sizeof(e->filename),
@@ -511,8 +393,6 @@ int BPF_KPROBE(handle_dequeue, struct rq *rq, struct task_struct *p, int flags)
     e->cpu          = bpf_get_smp_processor_id();
 
     fill_se(e, p);
-    e->rq_nr_running = BPF_CORE_READ(rq, nr_running);
-    e->rq_clock      = BPF_CORE_READ(rq, clock);
 
     __u32 tgid = BPF_CORE_READ(p, tgid);
     struct wait_queue_info *wq_info = bpf_map_lookup_elem(&wait_queue_map, &tgid);
