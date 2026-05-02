@@ -1,0 +1,1597 @@
+libbpf: loading object 'scheduler_deep_tracer_bpf' from buffer
+libbpf: elf: section(2) .text, size 720, link 0, flags 6, type=1
+libbpf: sec '.text': found program 'emit_wq_summary_callback' at insn offset 0 (0 bytes), code size 90 insns (720 bytes)
+libbpf: elf: section(3) .rel.text, size 32, link 56, flags 40, type=9
+libbpf: elf: section(4) tp_btf/sched_switch, size 3352, link 0, flags 6, type=1
+libbpf: sec 'tp_btf/sched_switch': found program 'handle_sched_switch' at insn offset 0 (0 bytes), code size 419 insns (3352 bytes)
+libbpf: elf: section(5) .reltp_btf/sched_switch, size 16, link 56, flags 40, type=9
+libbpf: elf: section(6) tp_btf/sched_wakeup, size 2776, link 0, flags 6, type=1
+libbpf: sec 'tp_btf/sched_wakeup': found program 'handle_wakeup' at insn offset 0 (0 bytes), code size 347 insns (2776 bytes)
+libbpf: elf: section(7) .reltp_btf/sched_wakeup, size 16, link 56, flags 40, type=9
+libbpf: elf: section(8) tp_btf/sched_wakeup_new, size 2776, link 0, flags 6, type=1
+libbpf: sec 'tp_btf/sched_wakeup_new': found program 'handle_wakeup_new' at insn offset 0 (0 bytes), code size 347 insns (2776 bytes)
+libbpf: elf: section(9) .reltp_btf/sched_wakeup_new, size 16, link 56, flags 40, type=9
+libbpf: elf: section(10) tp_btf/sched_migrate_task, size 2736, link 0, flags 6, type=1
+libbpf: sec 'tp_btf/sched_migrate_task': found program 'handle_migrate' at insn offset 0 (0 bytes), code size 342 insns (2736 bytes)
+libbpf: elf: section(11) .reltp_btf/sched_migrate_task, size 16, link 56, flags 40, type=9
+libbpf: elf: section(12) tp_btf/sched_process_fork, size 3360, link 0, flags 6, type=1
+libbpf: sec 'tp_btf/sched_process_fork': found program 'handle_fork' at insn offset 0 (0 bytes), code size 420 insns (3360 bytes)
+libbpf: elf: section(13) .reltp_btf/sched_process_fork, size 16, link 56, flags 40, type=9
+libbpf: elf: section(14) tp_btf/sched_process_exit, size 3000, link 0, flags 6, type=1
+libbpf: sec 'tp_btf/sched_process_exit': found program 'handle_exit' at insn offset 0 (0 bytes), code size 375 insns (3000 bytes)
+libbpf: elf: section(15) .reltp_btf/sched_process_exit, size 80, link 56, flags 40, type=9
+libbpf: elf: section(16) tp_btf/sched_process_exec, size 2784, link 0, flags 6, type=1
+libbpf: sec 'tp_btf/sched_process_exec': found program 'handle_exec' at insn offset 0 (0 bytes), code size 348 insns (2784 bytes)
+libbpf: elf: section(17) .reltp_btf/sched_process_exec, size 16, link 56, flags 40, type=9
+libbpf: elf: section(18) kprobe/dequeue_task_fair, size 3176, link 0, flags 6, type=1
+libbpf: sec 'kprobe/dequeue_task_fair': found program 'handle_dequeue' at insn offset 0 (0 bytes), code size 397 insns (3176 bytes)
+libbpf: elf: section(19) .relkprobe/dequeue_task_fair, size 144, link 56, flags 40, type=9
+libbpf: elf: section(20) kprobe/prepare_to_wait, size 1488, link 0, flags 6, type=1
+libbpf: sec 'kprobe/prepare_to_wait': found program 'handle_prepare_to_wait' at insn offset 0 (0 bytes), code size 186 insns (1488 bytes)
+libbpf: elf: section(21) .relkprobe/prepare_to_wait, size 96, link 56, flags 40, type=9
+libbpf: elf: section(22) kprobe/prepare_to_wait_exclusive, size 1488, link 0, flags 6, type=1
+libbpf: sec 'kprobe/prepare_to_wait_exclusive': found program 'handle_prepare_to_wait_exclusive' at insn offset 0 (0 bytes), code size 186 insns (1488 bytes)
+libbpf: elf: section(23) .relkprobe/prepare_to_wait_exclusive, size 96, link 56, flags 40, type=9
+libbpf: elf: section(24) kprobe/__mutex_lock_slowpath, size 2304, link 0, flags 6, type=1
+libbpf: sec 'kprobe/__mutex_lock_slowpath': found program 'handle_mutex_lock_slowpath' at insn offset 0 (0 bytes), code size 288 insns (2304 bytes)
+libbpf: elf: section(25) .relkprobe/__mutex_lock_slowpath, size 128, link 56, flags 40, type=9
+libbpf: elf: section(26) kprobe/__wait_on_bit, size 2304, link 0, flags 6, type=1
+libbpf: sec 'kprobe/__wait_on_bit': found program 'handle_wait_on_bit' at insn offset 0 (0 bytes), code size 288 insns (2304 bytes)
+libbpf: elf: section(27) .relkprobe/__wait_on_bit, size 128, link 56, flags 40, type=9
+libbpf: elf: section(28) kprobe/wait_on_page_bit, size 2304, link 0, flags 6, type=1
+libbpf: sec 'kprobe/wait_on_page_bit': found program 'handle_wait_on_page_bit' at insn offset 0 (0 bytes), code size 288 insns (2304 bytes)
+libbpf: elf: section(29) .relkprobe/wait_on_page_bit, size 128, link 56, flags 40, type=9
+libbpf: elf: section(30) kprobe/poll_schedule_timeout, size 1344, link 0, flags 6, type=1
+libbpf: sec 'kprobe/poll_schedule_timeout': found program 'handle_poll_schedule_timeout' at insn offset 0 (0 bytes), code size 168 insns (1344 bytes)
+libbpf: elf: section(31) .relkprobe/poll_schedule_timeout, size 80, link 56, flags 40, type=9
+libbpf: elf: section(32) kprobe/schedule_timeout, size 2320, link 0, flags 6, type=1
+libbpf: sec 'kprobe/schedule_timeout': found program 'handle_schedule_timeout' at insn offset 0 (0 bytes), code size 290 insns (2320 bytes)
+libbpf: elf: section(33) .relkprobe/schedule_timeout, size 128, link 56, flags 40, type=9
+libbpf: elf: section(34) license, size 4, link 0, flags 3, type=1
+libbpf: license of scheduler_deep_tracer_bpf is GPL
+libbpf: elf: section(35) .maps, size 80, link 0, flags 3, type=1
+libbpf: elf: section(46) .BTF, size 51258, link 0, flags 0, type=1
+libbpf: elf: section(48) .BTF.ext, size 28292, link 0, flags 0, type=1
+libbpf: elf: section(56) .symtab, size 1128, link 1, flags 0, type=2
+libbpf: looking for externs among 47 symbols...
+libbpf: collected 0 externs total
+libbpf: map 'events': at sec_idx 35, offset 0.
+libbpf: map 'events': found type = 27.
+libbpf: map 'events': found max_entries = 16777216.
+libbpf: map 'wait_queue_map': at sec_idx 35, offset 16.
+libbpf: map 'wait_queue_map': found type = 1.
+libbpf: map 'wait_queue_map': found key [14], sz = 4.
+libbpf: map 'wait_queue_map': found value [17], sz = 48.
+libbpf: map 'wait_queue_map': found max_entries = 4096.
+libbpf: map 'wait_queue_size_map': at sec_idx 35, offset 48.
+libbpf: map 'wait_queue_size_map': found type = 1.
+libbpf: map 'wait_queue_size_map': found key [18], sz = 8.
+libbpf: map 'wait_queue_size_map': found value [14], sz = 4.
+libbpf: map 'wait_queue_size_map': found max_entries = 4096.
+libbpf: sec '.rel.text': collecting relocation for section(2) '.text'
+libbpf: sec '.rel.text': relo #0: insn #4 against 'wait_queue_size_map'
+libbpf: prog 'emit_wq_summary_callback': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #4
+libbpf: sec '.rel.text': relo #1: insn #11 against 'events'
+libbpf: prog 'emit_wq_summary_callback': found map 0 (events, sec 35, off 0) for insn #11
+libbpf: sec '.reltp_btf/sched_switch': collecting relocation for section(4) 'tp_btf/sched_switch'
+libbpf: sec '.reltp_btf/sched_switch': relo #0: insn #4 against 'events'
+libbpf: prog 'handle_sched_switch': found map 0 (events, sec 35, off 0) for insn #4
+libbpf: sec '.reltp_btf/sched_wakeup': collecting relocation for section(6) 'tp_btf/sched_wakeup'
+libbpf: sec '.reltp_btf/sched_wakeup': relo #0: insn #2 against 'events'
+libbpf: prog 'handle_wakeup': found map 0 (events, sec 35, off 0) for insn #2
+libbpf: sec '.reltp_btf/sched_wakeup_new': collecting relocation for section(8) 'tp_btf/sched_wakeup_new'
+libbpf: sec '.reltp_btf/sched_wakeup_new': relo #0: insn #2 against 'events'
+libbpf: prog 'handle_wakeup_new': found map 0 (events, sec 35, off 0) for insn #2
+libbpf: sec '.reltp_btf/sched_migrate_task': collecting relocation for section(10) 'tp_btf/sched_migrate_task'
+libbpf: sec '.reltp_btf/sched_migrate_task': relo #0: insn #3 against 'events'
+libbpf: prog 'handle_migrate': found map 0 (events, sec 35, off 0) for insn #3
+libbpf: sec '.reltp_btf/sched_process_fork': collecting relocation for section(12) 'tp_btf/sched_process_fork'
+libbpf: sec '.reltp_btf/sched_process_fork': relo #0: insn #3 against 'events'
+libbpf: prog 'handle_fork': found map 0 (events, sec 35, off 0) for insn #3
+libbpf: sec '.reltp_btf/sched_process_exit': collecting relocation for section(14) 'tp_btf/sched_process_exit'
+libbpf: sec '.reltp_btf/sched_process_exit': relo #0: insn #2 against 'events'
+libbpf: prog 'handle_exit': found map 0 (events, sec 35, off 0) for insn #2
+libbpf: sec '.reltp_btf/sched_process_exit': relo #1: insn #341 against 'wait_queue_map'
+libbpf: prog 'handle_exit': found map 1 (wait_queue_map, sec 35, off 16) for insn #341
+libbpf: sec '.reltp_btf/sched_process_exit': relo #2: insn #351 against 'wait_queue_size_map'
+libbpf: prog 'handle_exit': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #351
+libbpf: sec '.reltp_btf/sched_process_exit': relo #3: insn #360 against 'wait_queue_size_map'
+libbpf: prog 'handle_exit': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #360
+libbpf: sec '.reltp_btf/sched_process_exit': relo #4: insn #367 against 'wait_queue_map'
+libbpf: prog 'handle_exit': found map 1 (wait_queue_map, sec 35, off 16) for insn #367
+libbpf: sec '.reltp_btf/sched_process_exec': collecting relocation for section(16) 'tp_btf/sched_process_exec'
+libbpf: sec '.reltp_btf/sched_process_exec': relo #0: insn #3 against 'events'
+libbpf: prog 'handle_exec': found map 0 (events, sec 35, off 0) for insn #3
+libbpf: sec '.relkprobe/dequeue_task_fair': collecting relocation for section(18) 'kprobe/dequeue_task_fair'
+libbpf: sec '.relkprobe/dequeue_task_fair': relo #0: insn #12 against 'events'
+libbpf: prog 'handle_dequeue': found map 0 (events, sec 35, off 0) for insn #12
+libbpf: sec '.relkprobe/dequeue_task_fair': relo #1: insn #336 against 'wait_queue_map'
+libbpf: prog 'handle_dequeue': found map 1 (wait_queue_map, sec 35, off 16) for insn #336
+libbpf: sec '.relkprobe/dequeue_task_fair': relo #2: insn #351 against 'wait_queue_map'
+libbpf: prog 'handle_dequeue': found map 1 (wait_queue_map, sec 35, off 16) for insn #351
+libbpf: sec '.relkprobe/dequeue_task_fair': relo #3: insn #353 against '.text'
+libbpf: sec '.relkprobe/dequeue_task_fair': relo #4: insn #363 against 'wait_queue_size_map'
+libbpf: prog 'handle_dequeue': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #363
+libbpf: sec '.relkprobe/dequeue_task_fair': relo #5: insn #372 against 'wait_queue_size_map'
+libbpf: prog 'handle_dequeue': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #372
+libbpf: sec '.relkprobe/dequeue_task_fair': relo #6: insn #381 against 'wait_queue_map'
+libbpf: prog 'handle_dequeue': found map 1 (wait_queue_map, sec 35, off 16) for insn #381
+libbpf: sec '.relkprobe/dequeue_task_fair': relo #7: insn #383 against '.text'
+libbpf: sec '.relkprobe/dequeue_task_fair': relo #8: insn #392 against 'wait_queue_map'
+libbpf: prog 'handle_dequeue': found map 1 (wait_queue_map, sec 35, off 16) for insn #392
+libbpf: sec '.relkprobe/prepare_to_wait': collecting relocation for section(20) 'kprobe/prepare_to_wait'
+libbpf: sec '.relkprobe/prepare_to_wait': relo #0: insn #6 against 'wait_queue_map'
+libbpf: prog 'handle_prepare_to_wait': found map 1 (wait_queue_map, sec 35, off 16) for insn #6
+libbpf: sec '.relkprobe/prepare_to_wait': relo #1: insn #61 against 'wait_queue_map'
+libbpf: prog 'handle_prepare_to_wait': found map 1 (wait_queue_map, sec 35, off 16) for insn #61
+libbpf: sec '.relkprobe/prepare_to_wait': relo #2: insn #71 against 'wait_queue_size_map'
+libbpf: prog 'handle_prepare_to_wait': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #71
+libbpf: sec '.relkprobe/prepare_to_wait': relo #3: insn #83 against 'wait_queue_size_map'
+libbpf: prog 'handle_prepare_to_wait': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #83
+libbpf: sec '.relkprobe/prepare_to_wait': relo #4: insn #93 against 'wait_queue_size_map'
+libbpf: prog 'handle_prepare_to_wait': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #93
+libbpf: sec '.relkprobe/prepare_to_wait': relo #5: insn #104 against 'events'
+libbpf: prog 'handle_prepare_to_wait': found map 0 (events, sec 35, off 0) for insn #104
+libbpf: sec '.relkprobe/prepare_to_wait_exclusive': collecting relocation for section(22) 'kprobe/prepare_to_wait_exclusive'
+libbpf: sec '.relkprobe/prepare_to_wait_exclusive': relo #0: insn #6 against 'wait_queue_map'
+libbpf: prog 'handle_prepare_to_wait_exclusive': found map 1 (wait_queue_map, sec 35, off 16) for insn #6
+libbpf: sec '.relkprobe/prepare_to_wait_exclusive': relo #1: insn #61 against 'wait_queue_map'
+libbpf: prog 'handle_prepare_to_wait_exclusive': found map 1 (wait_queue_map, sec 35, off 16) for insn #61
+libbpf: sec '.relkprobe/prepare_to_wait_exclusive': relo #2: insn #71 against 'wait_queue_size_map'
+libbpf: prog 'handle_prepare_to_wait_exclusive': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #71
+libbpf: sec '.relkprobe/prepare_to_wait_exclusive': relo #3: insn #83 against 'wait_queue_size_map'
+libbpf: prog 'handle_prepare_to_wait_exclusive': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #83
+libbpf: sec '.relkprobe/prepare_to_wait_exclusive': relo #4: insn #93 against 'wait_queue_size_map'
+libbpf: prog 'handle_prepare_to_wait_exclusive': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #93
+libbpf: sec '.relkprobe/prepare_to_wait_exclusive': relo #5: insn #104 against 'events'
+libbpf: prog 'handle_prepare_to_wait_exclusive': found map 0 (events, sec 35, off 0) for insn #104
+libbpf: sec '.relkprobe/__mutex_lock_slowpath': collecting relocation for section(24) 'kprobe/__mutex_lock_slowpath'
+libbpf: sec '.relkprobe/__mutex_lock_slowpath': relo #0: insn #5 against 'wait_queue_map'
+libbpf: prog 'handle_mutex_lock_slowpath': found map 1 (wait_queue_map, sec 35, off 16) for insn #5
+libbpf: sec '.relkprobe/__mutex_lock_slowpath': relo #1: insn #43 against 'wait_queue_map'
+libbpf: prog 'handle_mutex_lock_slowpath': found map 1 (wait_queue_map, sec 35, off 16) for insn #43
+libbpf: sec '.relkprobe/__mutex_lock_slowpath': relo #2: insn #52 against 'events'
+libbpf: prog 'handle_mutex_lock_slowpath': found map 0 (events, sec 35, off 0) for insn #52
+libbpf: sec '.relkprobe/__mutex_lock_slowpath': relo #3: insn #164 against 'wait_queue_map'
+libbpf: prog 'handle_mutex_lock_slowpath': found map 1 (wait_queue_map, sec 35, off 16) for insn #164
+libbpf: sec '.relkprobe/__mutex_lock_slowpath': relo #4: insn #173 against 'wait_queue_size_map'
+libbpf: prog 'handle_mutex_lock_slowpath': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #173
+libbpf: sec '.relkprobe/__mutex_lock_slowpath': relo #5: insn #185 against 'wait_queue_size_map'
+libbpf: prog 'handle_mutex_lock_slowpath': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #185
+libbpf: sec '.relkprobe/__mutex_lock_slowpath': relo #6: insn #195 against 'wait_queue_size_map'
+libbpf: prog 'handle_mutex_lock_slowpath': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #195
+libbpf: sec '.relkprobe/__mutex_lock_slowpath': relo #7: insn #206 against 'events'
+libbpf: prog 'handle_mutex_lock_slowpath': found map 0 (events, sec 35, off 0) for insn #206
+libbpf: sec '.relkprobe/__wait_on_bit': collecting relocation for section(26) 'kprobe/__wait_on_bit'
+libbpf: sec '.relkprobe/__wait_on_bit': relo #0: insn #5 against 'wait_queue_map'
+libbpf: prog 'handle_wait_on_bit': found map 1 (wait_queue_map, sec 35, off 16) for insn #5
+libbpf: sec '.relkprobe/__wait_on_bit': relo #1: insn #43 against 'wait_queue_map'
+libbpf: prog 'handle_wait_on_bit': found map 1 (wait_queue_map, sec 35, off 16) for insn #43
+libbpf: sec '.relkprobe/__wait_on_bit': relo #2: insn #52 against 'events'
+libbpf: prog 'handle_wait_on_bit': found map 0 (events, sec 35, off 0) for insn #52
+libbpf: sec '.relkprobe/__wait_on_bit': relo #3: insn #164 against 'wait_queue_map'
+libbpf: prog 'handle_wait_on_bit': found map 1 (wait_queue_map, sec 35, off 16) for insn #164
+libbpf: sec '.relkprobe/__wait_on_bit': relo #4: insn #173 against 'wait_queue_size_map'
+libbpf: prog 'handle_wait_on_bit': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #173
+libbpf: sec '.relkprobe/__wait_on_bit': relo #5: insn #185 against 'wait_queue_size_map'
+libbpf: prog 'handle_wait_on_bit': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #185
+libbpf: sec '.relkprobe/__wait_on_bit': relo #6: insn #195 against 'wait_queue_size_map'
+libbpf: prog 'handle_wait_on_bit': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #195
+libbpf: sec '.relkprobe/__wait_on_bit': relo #7: insn #206 against 'events'
+libbpf: prog 'handle_wait_on_bit': found map 0 (events, sec 35, off 0) for insn #206
+libbpf: sec '.relkprobe/wait_on_page_bit': collecting relocation for section(28) 'kprobe/wait_on_page_bit'
+libbpf: sec '.relkprobe/wait_on_page_bit': relo #0: insn #5 against 'wait_queue_map'
+libbpf: prog 'handle_wait_on_page_bit': found map 1 (wait_queue_map, sec 35, off 16) for insn #5
+libbpf: sec '.relkprobe/wait_on_page_bit': relo #1: insn #43 against 'wait_queue_map'
+libbpf: prog 'handle_wait_on_page_bit': found map 1 (wait_queue_map, sec 35, off 16) for insn #43
+libbpf: sec '.relkprobe/wait_on_page_bit': relo #2: insn #52 against 'events'
+libbpf: prog 'handle_wait_on_page_bit': found map 0 (events, sec 35, off 0) for insn #52
+libbpf: sec '.relkprobe/wait_on_page_bit': relo #3: insn #164 against 'wait_queue_map'
+libbpf: prog 'handle_wait_on_page_bit': found map 1 (wait_queue_map, sec 35, off 16) for insn #164
+libbpf: sec '.relkprobe/wait_on_page_bit': relo #4: insn #173 against 'wait_queue_size_map'
+libbpf: prog 'handle_wait_on_page_bit': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #173
+libbpf: sec '.relkprobe/wait_on_page_bit': relo #5: insn #185 against 'wait_queue_size_map'
+libbpf: prog 'handle_wait_on_page_bit': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #185
+libbpf: sec '.relkprobe/wait_on_page_bit': relo #6: insn #195 against 'wait_queue_size_map'
+libbpf: prog 'handle_wait_on_page_bit': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #195
+libbpf: sec '.relkprobe/wait_on_page_bit': relo #7: insn #206 against 'events'
+libbpf: prog 'handle_wait_on_page_bit': found map 0 (events, sec 35, off 0) for insn #206
+libbpf: sec '.relkprobe/poll_schedule_timeout': collecting relocation for section(30) 'kprobe/poll_schedule_timeout'
+libbpf: sec '.relkprobe/poll_schedule_timeout': relo #0: insn #44 against 'wait_queue_map'
+libbpf: prog 'handle_poll_schedule_timeout': found map 1 (wait_queue_map, sec 35, off 16) for insn #44
+libbpf: sec '.relkprobe/poll_schedule_timeout': relo #1: insn #53 against 'wait_queue_size_map'
+libbpf: prog 'handle_poll_schedule_timeout': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #53
+libbpf: sec '.relkprobe/poll_schedule_timeout': relo #2: insn #65 against 'wait_queue_size_map'
+libbpf: prog 'handle_poll_schedule_timeout': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #65
+libbpf: sec '.relkprobe/poll_schedule_timeout': relo #3: insn #75 against 'wait_queue_size_map'
+libbpf: prog 'handle_poll_schedule_timeout': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #75
+libbpf: sec '.relkprobe/poll_schedule_timeout': relo #4: insn #86 against 'events'
+libbpf: prog 'handle_poll_schedule_timeout': found map 0 (events, sec 35, off 0) for insn #86
+libbpf: sec '.relkprobe/schedule_timeout': collecting relocation for section(32) 'kprobe/schedule_timeout'
+libbpf: sec '.relkprobe/schedule_timeout': relo #0: insn #4 against 'wait_queue_map'
+libbpf: prog 'handle_schedule_timeout': found map 1 (wait_queue_map, sec 35, off 16) for insn #4
+libbpf: sec '.relkprobe/schedule_timeout': relo #1: insn #42 against 'wait_queue_map'
+libbpf: prog 'handle_schedule_timeout': found map 1 (wait_queue_map, sec 35, off 16) for insn #42
+libbpf: sec '.relkprobe/schedule_timeout': relo #2: insn #51 against 'events'
+libbpf: prog 'handle_schedule_timeout': found map 0 (events, sec 35, off 0) for insn #51
+libbpf: sec '.relkprobe/schedule_timeout': relo #3: insn #166 against 'wait_queue_map'
+libbpf: prog 'handle_schedule_timeout': found map 1 (wait_queue_map, sec 35, off 16) for insn #166
+libbpf: sec '.relkprobe/schedule_timeout': relo #4: insn #175 against 'wait_queue_size_map'
+libbpf: prog 'handle_schedule_timeout': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #175
+libbpf: sec '.relkprobe/schedule_timeout': relo #5: insn #187 against 'wait_queue_size_map'
+libbpf: prog 'handle_schedule_timeout': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #187
+libbpf: sec '.relkprobe/schedule_timeout': relo #6: insn #197 against 'wait_queue_size_map'
+libbpf: prog 'handle_schedule_timeout': found map 2 (wait_queue_size_map, sec 35, off 48) for insn #197
+libbpf: sec '.relkprobe/schedule_timeout': relo #7: insn #208 against 'events'
+libbpf: prog 'handle_schedule_timeout': found map 0 (events, sec 35, off 0) for insn #208
+libbpf: object 'scheduler_deep_': failed (-95) to create BPF token from '/sys/fs/bpf', skipping optional step...
+libbpf: loaded kernel BTF from '/sys/kernel/btf/vmlinux'
+libbpf: sec 'tp_btf/sched_switch': found 41 CO-RE relocations
+libbpf: CO-RE relocating [32] struct task_struct: found target candidate [172660] struct task_struct in [vmlinux]
+libbpf: prog 'handle_sched_switch': relo #0: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_sched_switch': relo #0: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_sched_switch': relo #0: patched insn #71 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_sched_switch': relo #1: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_sched_switch': relo #1: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_sched_switch': relo #1: patched insn #80 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_sched_switch': relo #2: <byte_off> [32] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_sched_switch': relo #2: matching candidate #0 <byte_off> [172660] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_sched_switch': relo #2: patched insn #89 (ALU/ALU64) imm 132 -> 132
+libbpf: prog 'handle_sched_switch': relo #3: <byte_off> [32] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_sched_switch': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_sched_switch': relo #3: patched insn #98 (ALU/ALU64) imm 136 -> 136
+libbpf: prog 'handle_sched_switch': relo #4: <byte_off> [32] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_sched_switch': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_sched_switch': relo #4: patched insn #108 (ALU/ALU64) imm 140 -> 140
+libbpf: prog 'handle_sched_switch': relo #5: <byte_off> [32] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_sched_switch': relo #5: matching candidate #0 <byte_off> [172660] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_sched_switch': relo #5: patched insn #117 (ALU/ALU64) imm 1420 -> 1420
+libbpf: prog 'handle_sched_switch': relo #6: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_sched_switch': relo #6: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_sched_switch': relo #6: patched insn #136 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_sched_switch': relo #7: <byte_off> [32] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_sched_switch': relo #7: matching candidate #0 <byte_off> [172660] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_sched_switch': relo #7: patched insn #143 (ALU/ALU64) imm 312 -> 312
+libbpf: prog 'handle_sched_switch': relo #8: <byte_off> [32] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_sched_switch': relo #8: matching candidate #0 <byte_off> [172660] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_sched_switch': relo #8: patched insn #152 (ALU/ALU64) imm 288 -> 288
+libbpf: prog 'handle_sched_switch': relo #9: <byte_off> [32] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_sched_switch': relo #9: matching candidate #0 <byte_off> [172660] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_sched_switch': relo #9: patched insn #161 (ALU/ALU64) imm 296 -> 296
+libbpf: prog 'handle_sched_switch': relo #10: <byte_off> [32] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_sched_switch': relo #10: matching candidate #0 <byte_off> [172660] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_sched_switch': relo #10: patched insn #170 (ALU/ALU64) imm 304 -> 304
+libbpf: prog 'handle_sched_switch': relo #11: <byte_off> [32] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_sched_switch': relo #11: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_sched_switch': relo #11: patched insn #179 (ALU/ALU64) imm 192 -> 192
+libbpf: prog 'handle_sched_switch': relo #12: <byte_off> [32] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_sched_switch': relo #12: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_sched_switch': relo #12: patched insn #188 (ALU/ALU64) imm 200 -> 200
+libbpf: prog 'handle_sched_switch': relo #13: <byte_off> [32] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_sched_switch': relo #13: matching candidate #0 <byte_off> [172660] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_sched_switch': relo #13: patched insn #197 (ALU/ALU64) imm 320 -> 320
+libbpf: prog 'handle_sched_switch': relo #14: <byte_off> [32] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_sched_switch': relo #14: matching candidate #0 <byte_off> [172660] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_sched_switch': relo #14: patched insn #206 (ALU/ALU64) imm 336 -> 336
+libbpf: prog 'handle_sched_switch': relo #15: <byte_off> [32] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_sched_switch': relo #15: matching candidate #0 <byte_off> [172660] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_sched_switch': relo #15: patched insn #215 (ALU/ALU64) imm 280 -> 280
+libbpf: prog 'handle_sched_switch': relo #16: <byte_off> [32] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_sched_switch': relo #16: matching candidate #0 <byte_off> [172660] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_sched_switch': relo #16: patched insn #225 (ALU/ALU64) imm 368 -> 368
+libbpf: CO-RE relocating [392] struct cfs_rq___co_min: found target candidate [111959] struct cfs_rq in [vmlinux]
+libbpf: prog 'handle_sched_switch': relo #17: <byte_off> [392] struct cfs_rq___co_min.min_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #17: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #17: no matching targets found
+libbpf: prog 'handle_sched_switch': relo #17: substituting insn #235 w/ invalid insn
+libbpf: CO-RE relocating [393] struct cfs_rq___co_nr_q: found target candidate [111959] struct cfs_rq in [vmlinux]
+libbpf: prog 'handle_sched_switch': relo #18: <field_exists> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #18: matching candidate #0 <field_exists> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_sched_switch': relo #18: patched insn #244 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_sched_switch': relo #19: <byte_off> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #19: matching candidate #0 <byte_off> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_sched_switch': relo #19: patched insn #246 (ALU/ALU64) imm 0 -> 16
+libbpf: CO-RE relocating [394] struct cfs_rq___co_nr_run: found target candidate [111959] struct cfs_rq in [vmlinux]
+libbpf: prog 'handle_sched_switch': relo #20: <byte_off> [394] struct cfs_rq___co_nr_run.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #20: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #20: no matching targets found
+libbpf: prog 'handle_sched_switch': relo #20: substituting insn #248 w/ invalid insn
+libbpf: CO-RE relocating [395] struct cfs_rq___co_hnr_q: found target candidate [111959] struct cfs_rq in [vmlinux]
+libbpf: prog 'handle_sched_switch': relo #21: <field_exists> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #21: matching candidate #0 <field_exists> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_sched_switch': relo #21: patched insn #257 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_sched_switch': relo #22: <byte_off> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #22: matching candidate #0 <byte_off> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_sched_switch': relo #22: patched insn #259 (ALU/ALU64) imm 0 -> 20
+libbpf: CO-RE relocating [396] struct cfs_rq___co_hnr_old: found target candidate [111959] struct cfs_rq in [vmlinux]
+libbpf: prog 'handle_sched_switch': relo #23: <byte_off> [396] struct cfs_rq___co_hnr_old.h_nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #23: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #23: no matching targets found
+libbpf: prog 'handle_sched_switch': relo #23: substituting insn #261 w/ invalid insn
+libbpf: CO-RE relocating [397] struct cfs_rq___co_exec: found target candidate [111959] struct cfs_rq in [vmlinux]
+libbpf: prog 'handle_sched_switch': relo #24: <byte_off> [397] struct cfs_rq___co_exec.exec_clock (0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #24: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #24: no matching targets found
+libbpf: prog 'handle_sched_switch': relo #24: substituting insn #270 w/ invalid insn
+libbpf: CO-RE relocating [398] struct cfs_rq___co_load: found target candidate [111959] struct cfs_rq in [vmlinux]
+libbpf: prog 'handle_sched_switch': relo #25: <byte_off> [398] struct cfs_rq___co_load.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #25: matching candidate #0 <byte_off> [111959] struct cfs_rq.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #25: patched insn #279 (ALU/ALU64) imm 0 -> 0
+libbpf: CO-RE relocating [399] struct cfs_rq___co_sumw: found target candidate [111959] struct cfs_rq in [vmlinux]
+libbpf: prog 'handle_sched_switch': relo #26: <field_exists> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #26: matching candidate #0 <field_exists> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_sched_switch': relo #26: patched insn #288 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_sched_switch': relo #27: <byte_off> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #27: matching candidate #0 <byte_off> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_sched_switch': relo #27: patched insn #290 (ALU/ALU64) imm 0 -> 32
+libbpf: CO-RE relocating [400] struct cfs_rq___co_avg: found target candidate [111959] struct cfs_rq in [vmlinux]
+libbpf: prog 'handle_sched_switch': relo #28: <byte_off> [400] struct cfs_rq___co_avg.avg_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #28: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #28: no matching targets found
+libbpf: prog 'handle_sched_switch': relo #28: substituting insn #292 w/ invalid insn
+libbpf: prog 'handle_sched_switch': relo #29: <byte_off> [32] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_sched_switch': relo #29: matching candidate #0 <byte_off> [172660] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_sched_switch': relo #29: patched insn #301 (ALU/ALU64) imm 48 -> 48
+libbpf: CO-RE relocating [401] struct cfs_rq___co_rq: found target candidate [111959] struct cfs_rq in [vmlinux]
+libbpf: prog 'handle_sched_switch': relo #30: <byte_off> [401] struct cfs_rq___co_rq.rq (0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #30: matching candidate #0 <byte_off> [111959] struct cfs_rq.rq (0:22 @ offset 312)
+libbpf: prog 'handle_sched_switch': relo #30: patched insn #317 (ALU/ALU64) imm 0 -> 312
+libbpf: CO-RE relocating [402] struct rq: found target candidate [162302] struct rq in [vmlinux]
+libbpf: prog 'handle_sched_switch': relo #31: <byte_off> [402] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #31: matching candidate #0 <byte_off> [162302] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_sched_switch': relo #31: patched insn #325 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_sched_switch': relo #32: <byte_off> [402] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_sched_switch': relo #32: matching candidate #0 <byte_off> [162302] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_sched_switch': relo #32: patched insn #334 (ALU/ALU64) imm 3536 -> 3536
+libbpf: prog 'handle_sched_switch': relo #33: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_sched_switch': relo #33: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_sched_switch': relo #33: patched insn #343 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_sched_switch': relo #34: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_sched_switch': relo #34: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_sched_switch': relo #34: patched insn #353 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_sched_switch': relo #35: <byte_off> [32] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_sched_switch': relo #35: matching candidate #0 <byte_off> [172660] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_sched_switch': relo #35: patched insn #362 (ALU/ALU64) imm 132 -> 132
+libbpf: prog 'handle_sched_switch': relo #36: <byte_off> [32] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_sched_switch': relo #36: matching candidate #0 <byte_off> [172660] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_sched_switch': relo #36: patched insn #371 (ALU/ALU64) imm 312 -> 312
+libbpf: prog 'handle_sched_switch': relo #37: <byte_off> [32] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_sched_switch': relo #37: matching candidate #0 <byte_off> [172660] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_sched_switch': relo #37: patched insn #380 (ALU/ALU64) imm 296 -> 296
+libbpf: prog 'handle_sched_switch': relo #38: <byte_off> [32] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_sched_switch': relo #38: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_sched_switch': relo #38: patched insn #389 (ALU/ALU64) imm 192 -> 192
+libbpf: prog 'handle_sched_switch': relo #39: <byte_off> [32] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_sched_switch': relo #39: matching candidate #0 <byte_off> [172660] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_sched_switch': relo #39: patched insn #399 (ALU/ALU64) imm 48 -> 48
+libbpf: prog 'handle_sched_switch': relo #40: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_sched_switch': relo #40: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_sched_switch': relo #40: patched insn #407 (ALU/ALU64) imm 2448 -> 2448
+libbpf: sec 'tp_btf/sched_wakeup': found 34 CO-RE relocations
+libbpf: prog 'handle_wakeup': relo #0: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_wakeup': relo #0: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_wakeup': relo #0: patched insn #61 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_wakeup': relo #1: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_wakeup': relo #1: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_wakeup': relo #1: patched insn #70 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_wakeup': relo #2: <byte_off> [32] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_wakeup': relo #2: matching candidate #0 <byte_off> [172660] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_wakeup': relo #2: patched insn #79 (ALU/ALU64) imm 132 -> 132
+libbpf: prog 'handle_wakeup': relo #3: <byte_off> [32] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_wakeup': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_wakeup': relo #3: patched insn #88 (ALU/ALU64) imm 136 -> 136
+libbpf: prog 'handle_wakeup': relo #4: <byte_off> [32] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_wakeup': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_wakeup': relo #4: patched insn #98 (ALU/ALU64) imm 140 -> 140
+libbpf: prog 'handle_wakeup': relo #5: <byte_off> [32] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_wakeup': relo #5: matching candidate #0 <byte_off> [172660] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_wakeup': relo #5: patched insn #107 (ALU/ALU64) imm 1420 -> 1420
+libbpf: prog 'handle_wakeup': relo #6: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wakeup': relo #6: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wakeup': relo #6: patched insn #126 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_wakeup': relo #7: <byte_off> [32] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_wakeup': relo #7: matching candidate #0 <byte_off> [172660] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_wakeup': relo #7: patched insn #133 (ALU/ALU64) imm 312 -> 312
+libbpf: prog 'handle_wakeup': relo #8: <byte_off> [32] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_wakeup': relo #8: matching candidate #0 <byte_off> [172660] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_wakeup': relo #8: patched insn #142 (ALU/ALU64) imm 288 -> 288
+libbpf: prog 'handle_wakeup': relo #9: <byte_off> [32] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_wakeup': relo #9: matching candidate #0 <byte_off> [172660] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_wakeup': relo #9: patched insn #151 (ALU/ALU64) imm 296 -> 296
+libbpf: prog 'handle_wakeup': relo #10: <byte_off> [32] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_wakeup': relo #10: matching candidate #0 <byte_off> [172660] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_wakeup': relo #10: patched insn #160 (ALU/ALU64) imm 304 -> 304
+libbpf: prog 'handle_wakeup': relo #11: <byte_off> [32] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_wakeup': relo #11: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_wakeup': relo #11: patched insn #169 (ALU/ALU64) imm 192 -> 192
+libbpf: prog 'handle_wakeup': relo #12: <byte_off> [32] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_wakeup': relo #12: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_wakeup': relo #12: patched insn #178 (ALU/ALU64) imm 200 -> 200
+libbpf: prog 'handle_wakeup': relo #13: <byte_off> [32] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_wakeup': relo #13: matching candidate #0 <byte_off> [172660] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_wakeup': relo #13: patched insn #187 (ALU/ALU64) imm 320 -> 320
+libbpf: prog 'handle_wakeup': relo #14: <byte_off> [32] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_wakeup': relo #14: matching candidate #0 <byte_off> [172660] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_wakeup': relo #14: patched insn #196 (ALU/ALU64) imm 336 -> 336
+libbpf: prog 'handle_wakeup': relo #15: <byte_off> [32] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_wakeup': relo #15: matching candidate #0 <byte_off> [172660] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_wakeup': relo #15: patched insn #205 (ALU/ALU64) imm 280 -> 280
+libbpf: prog 'handle_wakeup': relo #16: <byte_off> [32] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_wakeup': relo #16: matching candidate #0 <byte_off> [172660] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_wakeup': relo #16: patched insn #215 (ALU/ALU64) imm 368 -> 368
+libbpf: prog 'handle_wakeup': relo #17: <byte_off> [392] struct cfs_rq___co_min.min_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #17: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #17: no matching targets found
+libbpf: prog 'handle_wakeup': relo #17: substituting insn #225 w/ invalid insn
+libbpf: prog 'handle_wakeup': relo #18: <field_exists> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #18: matching candidate #0 <field_exists> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_wakeup': relo #18: patched insn #234 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_wakeup': relo #19: <byte_off> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #19: matching candidate #0 <byte_off> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_wakeup': relo #19: patched insn #236 (ALU/ALU64) imm 0 -> 16
+libbpf: prog 'handle_wakeup': relo #20: <byte_off> [394] struct cfs_rq___co_nr_run.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #20: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #20: no matching targets found
+libbpf: prog 'handle_wakeup': relo #20: substituting insn #238 w/ invalid insn
+libbpf: prog 'handle_wakeup': relo #21: <field_exists> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #21: matching candidate #0 <field_exists> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_wakeup': relo #21: patched insn #247 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_wakeup': relo #22: <byte_off> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #22: matching candidate #0 <byte_off> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_wakeup': relo #22: patched insn #249 (ALU/ALU64) imm 0 -> 20
+libbpf: prog 'handle_wakeup': relo #23: <byte_off> [396] struct cfs_rq___co_hnr_old.h_nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #23: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #23: no matching targets found
+libbpf: prog 'handle_wakeup': relo #23: substituting insn #251 w/ invalid insn
+libbpf: prog 'handle_wakeup': relo #24: <byte_off> [397] struct cfs_rq___co_exec.exec_clock (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #24: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #24: no matching targets found
+libbpf: prog 'handle_wakeup': relo #24: substituting insn #260 w/ invalid insn
+libbpf: prog 'handle_wakeup': relo #25: <byte_off> [398] struct cfs_rq___co_load.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #25: matching candidate #0 <byte_off> [111959] struct cfs_rq.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #25: patched insn #269 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_wakeup': relo #26: <field_exists> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #26: matching candidate #0 <field_exists> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_wakeup': relo #26: patched insn #278 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_wakeup': relo #27: <byte_off> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #27: matching candidate #0 <byte_off> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_wakeup': relo #27: patched insn #280 (ALU/ALU64) imm 0 -> 32
+libbpf: prog 'handle_wakeup': relo #28: <byte_off> [400] struct cfs_rq___co_avg.avg_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #28: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #28: no matching targets found
+libbpf: prog 'handle_wakeup': relo #28: substituting insn #282 w/ invalid insn
+libbpf: prog 'handle_wakeup': relo #29: <byte_off> [32] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_wakeup': relo #29: matching candidate #0 <byte_off> [172660] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_wakeup': relo #29: patched insn #291 (ALU/ALU64) imm 48 -> 48
+libbpf: prog 'handle_wakeup': relo #30: <byte_off> [401] struct cfs_rq___co_rq.rq (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #30: matching candidate #0 <byte_off> [111959] struct cfs_rq.rq (0:22 @ offset 312)
+libbpf: prog 'handle_wakeup': relo #30: patched insn #307 (ALU/ALU64) imm 0 -> 312
+libbpf: prog 'handle_wakeup': relo #31: <byte_off> [402] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #31: matching candidate #0 <byte_off> [162302] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup': relo #31: patched insn #315 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_wakeup': relo #32: <byte_off> [402] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_wakeup': relo #32: matching candidate #0 <byte_off> [162302] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_wakeup': relo #32: patched insn #324 (ALU/ALU64) imm 3536 -> 3536
+libbpf: prog 'handle_wakeup': relo #33: <byte_off> [32] struct task_struct.wake_cpu (0:13 @ offset 124)
+libbpf: prog 'handle_wakeup': relo #33: matching candidate #0 <byte_off> [172660] struct task_struct.wake_cpu (0:13 @ offset 124)
+libbpf: prog 'handle_wakeup': relo #33: patched insn #333 (ALU/ALU64) imm 124 -> 124
+libbpf: sec 'tp_btf/sched_wakeup_new': found 34 CO-RE relocations
+libbpf: prog 'handle_wakeup_new': relo #0: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_wakeup_new': relo #0: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_wakeup_new': relo #0: patched insn #61 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_wakeup_new': relo #1: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_wakeup_new': relo #1: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_wakeup_new': relo #1: patched insn #70 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_wakeup_new': relo #2: <byte_off> [32] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_wakeup_new': relo #2: matching candidate #0 <byte_off> [172660] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_wakeup_new': relo #2: patched insn #79 (ALU/ALU64) imm 132 -> 132
+libbpf: prog 'handle_wakeup_new': relo #3: <byte_off> [32] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_wakeup_new': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_wakeup_new': relo #3: patched insn #88 (ALU/ALU64) imm 136 -> 136
+libbpf: prog 'handle_wakeup_new': relo #4: <byte_off> [32] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_wakeup_new': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_wakeup_new': relo #4: patched insn #98 (ALU/ALU64) imm 140 -> 140
+libbpf: prog 'handle_wakeup_new': relo #5: <byte_off> [32] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_wakeup_new': relo #5: matching candidate #0 <byte_off> [172660] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_wakeup_new': relo #5: patched insn #107 (ALU/ALU64) imm 1420 -> 1420
+libbpf: prog 'handle_wakeup_new': relo #6: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wakeup_new': relo #6: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wakeup_new': relo #6: patched insn #126 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_wakeup_new': relo #7: <byte_off> [32] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_wakeup_new': relo #7: matching candidate #0 <byte_off> [172660] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_wakeup_new': relo #7: patched insn #133 (ALU/ALU64) imm 312 -> 312
+libbpf: prog 'handle_wakeup_new': relo #8: <byte_off> [32] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_wakeup_new': relo #8: matching candidate #0 <byte_off> [172660] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_wakeup_new': relo #8: patched insn #142 (ALU/ALU64) imm 288 -> 288
+libbpf: prog 'handle_wakeup_new': relo #9: <byte_off> [32] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_wakeup_new': relo #9: matching candidate #0 <byte_off> [172660] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_wakeup_new': relo #9: patched insn #151 (ALU/ALU64) imm 296 -> 296
+libbpf: prog 'handle_wakeup_new': relo #10: <byte_off> [32] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_wakeup_new': relo #10: matching candidate #0 <byte_off> [172660] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_wakeup_new': relo #10: patched insn #160 (ALU/ALU64) imm 304 -> 304
+libbpf: prog 'handle_wakeup_new': relo #11: <byte_off> [32] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_wakeup_new': relo #11: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_wakeup_new': relo #11: patched insn #169 (ALU/ALU64) imm 192 -> 192
+libbpf: prog 'handle_wakeup_new': relo #12: <byte_off> [32] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_wakeup_new': relo #12: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_wakeup_new': relo #12: patched insn #178 (ALU/ALU64) imm 200 -> 200
+libbpf: prog 'handle_wakeup_new': relo #13: <byte_off> [32] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_wakeup_new': relo #13: matching candidate #0 <byte_off> [172660] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_wakeup_new': relo #13: patched insn #187 (ALU/ALU64) imm 320 -> 320
+libbpf: prog 'handle_wakeup_new': relo #14: <byte_off> [32] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_wakeup_new': relo #14: matching candidate #0 <byte_off> [172660] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_wakeup_new': relo #14: patched insn #196 (ALU/ALU64) imm 336 -> 336
+libbpf: prog 'handle_wakeup_new': relo #15: <byte_off> [32] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_wakeup_new': relo #15: matching candidate #0 <byte_off> [172660] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_wakeup_new': relo #15: patched insn #205 (ALU/ALU64) imm 280 -> 280
+libbpf: prog 'handle_wakeup_new': relo #16: <byte_off> [32] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_wakeup_new': relo #16: matching candidate #0 <byte_off> [172660] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_wakeup_new': relo #16: patched insn #215 (ALU/ALU64) imm 368 -> 368
+libbpf: prog 'handle_wakeup_new': relo #17: <byte_off> [392] struct cfs_rq___co_min.min_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #17: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #17: no matching targets found
+libbpf: prog 'handle_wakeup_new': relo #17: substituting insn #225 w/ invalid insn
+libbpf: prog 'handle_wakeup_new': relo #18: <field_exists> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #18: matching candidate #0 <field_exists> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_wakeup_new': relo #18: patched insn #234 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_wakeup_new': relo #19: <byte_off> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #19: matching candidate #0 <byte_off> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_wakeup_new': relo #19: patched insn #236 (ALU/ALU64) imm 0 -> 16
+libbpf: prog 'handle_wakeup_new': relo #20: <byte_off> [394] struct cfs_rq___co_nr_run.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #20: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #20: no matching targets found
+libbpf: prog 'handle_wakeup_new': relo #20: substituting insn #238 w/ invalid insn
+libbpf: prog 'handle_wakeup_new': relo #21: <field_exists> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #21: matching candidate #0 <field_exists> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_wakeup_new': relo #21: patched insn #247 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_wakeup_new': relo #22: <byte_off> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #22: matching candidate #0 <byte_off> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_wakeup_new': relo #22: patched insn #249 (ALU/ALU64) imm 0 -> 20
+libbpf: prog 'handle_wakeup_new': relo #23: <byte_off> [396] struct cfs_rq___co_hnr_old.h_nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #23: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #23: no matching targets found
+libbpf: prog 'handle_wakeup_new': relo #23: substituting insn #251 w/ invalid insn
+libbpf: prog 'handle_wakeup_new': relo #24: <byte_off> [397] struct cfs_rq___co_exec.exec_clock (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #24: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #24: no matching targets found
+libbpf: prog 'handle_wakeup_new': relo #24: substituting insn #260 w/ invalid insn
+libbpf: prog 'handle_wakeup_new': relo #25: <byte_off> [398] struct cfs_rq___co_load.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #25: matching candidate #0 <byte_off> [111959] struct cfs_rq.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #25: patched insn #269 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_wakeup_new': relo #26: <field_exists> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #26: matching candidate #0 <field_exists> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_wakeup_new': relo #26: patched insn #278 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_wakeup_new': relo #27: <byte_off> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #27: matching candidate #0 <byte_off> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_wakeup_new': relo #27: patched insn #280 (ALU/ALU64) imm 0 -> 32
+libbpf: prog 'handle_wakeup_new': relo #28: <byte_off> [400] struct cfs_rq___co_avg.avg_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #28: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #28: no matching targets found
+libbpf: prog 'handle_wakeup_new': relo #28: substituting insn #282 w/ invalid insn
+libbpf: prog 'handle_wakeup_new': relo #29: <byte_off> [32] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_wakeup_new': relo #29: matching candidate #0 <byte_off> [172660] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_wakeup_new': relo #29: patched insn #291 (ALU/ALU64) imm 48 -> 48
+libbpf: prog 'handle_wakeup_new': relo #30: <byte_off> [401] struct cfs_rq___co_rq.rq (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #30: matching candidate #0 <byte_off> [111959] struct cfs_rq.rq (0:22 @ offset 312)
+libbpf: prog 'handle_wakeup_new': relo #30: patched insn #307 (ALU/ALU64) imm 0 -> 312
+libbpf: prog 'handle_wakeup_new': relo #31: <byte_off> [402] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #31: matching candidate #0 <byte_off> [162302] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_wakeup_new': relo #31: patched insn #315 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_wakeup_new': relo #32: <byte_off> [402] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_wakeup_new': relo #32: matching candidate #0 <byte_off> [162302] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_wakeup_new': relo #32: patched insn #324 (ALU/ALU64) imm 3536 -> 3536
+libbpf: prog 'handle_wakeup_new': relo #33: <byte_off> [32] struct task_struct.wake_cpu (0:13 @ offset 124)
+libbpf: prog 'handle_wakeup_new': relo #33: matching candidate #0 <byte_off> [172660] struct task_struct.wake_cpu (0:13 @ offset 124)
+libbpf: prog 'handle_wakeup_new': relo #33: patched insn #333 (ALU/ALU64) imm 124 -> 124
+libbpf: sec 'tp_btf/sched_migrate_task': found 33 CO-RE relocations
+libbpf: prog 'handle_migrate': relo #0: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_migrate': relo #0: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_migrate': relo #0: patched insn #65 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_migrate': relo #1: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_migrate': relo #1: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_migrate': relo #1: patched insn #74 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_migrate': relo #2: <byte_off> [32] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_migrate': relo #2: matching candidate #0 <byte_off> [172660] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_migrate': relo #2: patched insn #83 (ALU/ALU64) imm 132 -> 132
+libbpf: prog 'handle_migrate': relo #3: <byte_off> [32] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_migrate': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_migrate': relo #3: patched insn #92 (ALU/ALU64) imm 136 -> 136
+libbpf: prog 'handle_migrate': relo #4: <byte_off> [32] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_migrate': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_migrate': relo #4: patched insn #102 (ALU/ALU64) imm 140 -> 140
+libbpf: prog 'handle_migrate': relo #5: <byte_off> [32] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_migrate': relo #5: matching candidate #0 <byte_off> [172660] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_migrate': relo #5: patched insn #111 (ALU/ALU64) imm 1420 -> 1420
+libbpf: prog 'handle_migrate': relo #6: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_migrate': relo #6: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_migrate': relo #6: patched insn #130 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_migrate': relo #7: <byte_off> [32] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_migrate': relo #7: matching candidate #0 <byte_off> [172660] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_migrate': relo #7: patched insn #137 (ALU/ALU64) imm 312 -> 312
+libbpf: prog 'handle_migrate': relo #8: <byte_off> [32] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_migrate': relo #8: matching candidate #0 <byte_off> [172660] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_migrate': relo #8: patched insn #146 (ALU/ALU64) imm 288 -> 288
+libbpf: prog 'handle_migrate': relo #9: <byte_off> [32] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_migrate': relo #9: matching candidate #0 <byte_off> [172660] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_migrate': relo #9: patched insn #155 (ALU/ALU64) imm 296 -> 296
+libbpf: prog 'handle_migrate': relo #10: <byte_off> [32] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_migrate': relo #10: matching candidate #0 <byte_off> [172660] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_migrate': relo #10: patched insn #164 (ALU/ALU64) imm 304 -> 304
+libbpf: prog 'handle_migrate': relo #11: <byte_off> [32] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_migrate': relo #11: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_migrate': relo #11: patched insn #173 (ALU/ALU64) imm 192 -> 192
+libbpf: prog 'handle_migrate': relo #12: <byte_off> [32] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_migrate': relo #12: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_migrate': relo #12: patched insn #182 (ALU/ALU64) imm 200 -> 200
+libbpf: prog 'handle_migrate': relo #13: <byte_off> [32] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_migrate': relo #13: matching candidate #0 <byte_off> [172660] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_migrate': relo #13: patched insn #191 (ALU/ALU64) imm 320 -> 320
+libbpf: prog 'handle_migrate': relo #14: <byte_off> [32] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_migrate': relo #14: matching candidate #0 <byte_off> [172660] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_migrate': relo #14: patched insn #200 (ALU/ALU64) imm 336 -> 336
+libbpf: prog 'handle_migrate': relo #15: <byte_off> [32] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_migrate': relo #15: matching candidate #0 <byte_off> [172660] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_migrate': relo #15: patched insn #209 (ALU/ALU64) imm 280 -> 280
+libbpf: prog 'handle_migrate': relo #16: <byte_off> [32] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_migrate': relo #16: matching candidate #0 <byte_off> [172660] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_migrate': relo #16: patched insn #219 (ALU/ALU64) imm 368 -> 368
+libbpf: prog 'handle_migrate': relo #17: <byte_off> [392] struct cfs_rq___co_min.min_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #17: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #17: no matching targets found
+libbpf: prog 'handle_migrate': relo #17: substituting insn #229 w/ invalid insn
+libbpf: prog 'handle_migrate': relo #18: <field_exists> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #18: matching candidate #0 <field_exists> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_migrate': relo #18: patched insn #238 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_migrate': relo #19: <byte_off> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #19: matching candidate #0 <byte_off> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_migrate': relo #19: patched insn #240 (ALU/ALU64) imm 0 -> 16
+libbpf: prog 'handle_migrate': relo #20: <byte_off> [394] struct cfs_rq___co_nr_run.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #20: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #20: no matching targets found
+libbpf: prog 'handle_migrate': relo #20: substituting insn #242 w/ invalid insn
+libbpf: prog 'handle_migrate': relo #21: <field_exists> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #21: matching candidate #0 <field_exists> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_migrate': relo #21: patched insn #251 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_migrate': relo #22: <byte_off> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #22: matching candidate #0 <byte_off> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_migrate': relo #22: patched insn #253 (ALU/ALU64) imm 0 -> 20
+libbpf: prog 'handle_migrate': relo #23: <byte_off> [396] struct cfs_rq___co_hnr_old.h_nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #23: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #23: no matching targets found
+libbpf: prog 'handle_migrate': relo #23: substituting insn #255 w/ invalid insn
+libbpf: prog 'handle_migrate': relo #24: <byte_off> [397] struct cfs_rq___co_exec.exec_clock (0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #24: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #24: no matching targets found
+libbpf: prog 'handle_migrate': relo #24: substituting insn #264 w/ invalid insn
+libbpf: prog 'handle_migrate': relo #25: <byte_off> [398] struct cfs_rq___co_load.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #25: matching candidate #0 <byte_off> [111959] struct cfs_rq.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #25: patched insn #273 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_migrate': relo #26: <field_exists> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #26: matching candidate #0 <field_exists> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_migrate': relo #26: patched insn #282 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_migrate': relo #27: <byte_off> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #27: matching candidate #0 <byte_off> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_migrate': relo #27: patched insn #284 (ALU/ALU64) imm 0 -> 32
+libbpf: prog 'handle_migrate': relo #28: <byte_off> [400] struct cfs_rq___co_avg.avg_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #28: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #28: no matching targets found
+libbpf: prog 'handle_migrate': relo #28: substituting insn #286 w/ invalid insn
+libbpf: prog 'handle_migrate': relo #29: <byte_off> [32] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_migrate': relo #29: matching candidate #0 <byte_off> [172660] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_migrate': relo #29: patched insn #295 (ALU/ALU64) imm 48 -> 48
+libbpf: prog 'handle_migrate': relo #30: <byte_off> [401] struct cfs_rq___co_rq.rq (0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #30: matching candidate #0 <byte_off> [111959] struct cfs_rq.rq (0:22 @ offset 312)
+libbpf: prog 'handle_migrate': relo #30: patched insn #311 (ALU/ALU64) imm 0 -> 312
+libbpf: prog 'handle_migrate': relo #31: <byte_off> [402] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #31: matching candidate #0 <byte_off> [162302] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_migrate': relo #31: patched insn #319 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_migrate': relo #32: <byte_off> [402] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_migrate': relo #32: matching candidate #0 <byte_off> [162302] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_migrate': relo #32: patched insn #328 (ALU/ALU64) imm 3536 -> 3536
+libbpf: sec 'tp_btf/sched_process_fork': found 41 CO-RE relocations
+libbpf: prog 'handle_fork': relo #0: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_fork': relo #0: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_fork': relo #0: patched insn #64 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_fork': relo #1: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_fork': relo #1: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_fork': relo #1: patched insn #73 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_fork': relo #2: <byte_off> [32] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_fork': relo #2: matching candidate #0 <byte_off> [172660] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_fork': relo #2: patched insn #82 (ALU/ALU64) imm 132 -> 132
+libbpf: prog 'handle_fork': relo #3: <byte_off> [32] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_fork': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_fork': relo #3: patched insn #91 (ALU/ALU64) imm 136 -> 136
+libbpf: prog 'handle_fork': relo #4: <byte_off> [32] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_fork': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_fork': relo #4: patched insn #101 (ALU/ALU64) imm 140 -> 140
+libbpf: prog 'handle_fork': relo #5: <byte_off> [32] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_fork': relo #5: matching candidate #0 <byte_off> [172660] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_fork': relo #5: patched insn #110 (ALU/ALU64) imm 1420 -> 1420
+libbpf: prog 'handle_fork': relo #6: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_fork': relo #6: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_fork': relo #6: patched insn #129 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_fork': relo #7: <byte_off> [32] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_fork': relo #7: matching candidate #0 <byte_off> [172660] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_fork': relo #7: patched insn #136 (ALU/ALU64) imm 312 -> 312
+libbpf: prog 'handle_fork': relo #8: <byte_off> [32] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_fork': relo #8: matching candidate #0 <byte_off> [172660] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_fork': relo #8: patched insn #145 (ALU/ALU64) imm 288 -> 288
+libbpf: prog 'handle_fork': relo #9: <byte_off> [32] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_fork': relo #9: matching candidate #0 <byte_off> [172660] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_fork': relo #9: patched insn #154 (ALU/ALU64) imm 296 -> 296
+libbpf: prog 'handle_fork': relo #10: <byte_off> [32] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_fork': relo #10: matching candidate #0 <byte_off> [172660] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_fork': relo #10: patched insn #163 (ALU/ALU64) imm 304 -> 304
+libbpf: prog 'handle_fork': relo #11: <byte_off> [32] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_fork': relo #11: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_fork': relo #11: patched insn #172 (ALU/ALU64) imm 192 -> 192
+libbpf: prog 'handle_fork': relo #12: <byte_off> [32] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_fork': relo #12: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_fork': relo #12: patched insn #181 (ALU/ALU64) imm 200 -> 200
+libbpf: prog 'handle_fork': relo #13: <byte_off> [32] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_fork': relo #13: matching candidate #0 <byte_off> [172660] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_fork': relo #13: patched insn #190 (ALU/ALU64) imm 320 -> 320
+libbpf: prog 'handle_fork': relo #14: <byte_off> [32] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_fork': relo #14: matching candidate #0 <byte_off> [172660] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_fork': relo #14: patched insn #199 (ALU/ALU64) imm 336 -> 336
+libbpf: prog 'handle_fork': relo #15: <byte_off> [32] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_fork': relo #15: matching candidate #0 <byte_off> [172660] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_fork': relo #15: patched insn #208 (ALU/ALU64) imm 280 -> 280
+libbpf: prog 'handle_fork': relo #16: <byte_off> [32] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_fork': relo #16: matching candidate #0 <byte_off> [172660] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_fork': relo #16: patched insn #218 (ALU/ALU64) imm 368 -> 368
+libbpf: prog 'handle_fork': relo #17: <byte_off> [392] struct cfs_rq___co_min.min_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #17: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_fork': relo #17: no matching targets found
+libbpf: prog 'handle_fork': relo #17: substituting insn #228 w/ invalid insn
+libbpf: prog 'handle_fork': relo #18: <field_exists> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #18: matching candidate #0 <field_exists> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_fork': relo #18: patched insn #237 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_fork': relo #19: <byte_off> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #19: matching candidate #0 <byte_off> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_fork': relo #19: patched insn #239 (ALU/ALU64) imm 0 -> 16
+libbpf: prog 'handle_fork': relo #20: <byte_off> [394] struct cfs_rq___co_nr_run.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #20: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_fork': relo #20: no matching targets found
+libbpf: prog 'handle_fork': relo #20: substituting insn #241 w/ invalid insn
+libbpf: prog 'handle_fork': relo #21: <field_exists> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #21: matching candidate #0 <field_exists> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_fork': relo #21: patched insn #250 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_fork': relo #22: <byte_off> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #22: matching candidate #0 <byte_off> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_fork': relo #22: patched insn #252 (ALU/ALU64) imm 0 -> 20
+libbpf: prog 'handle_fork': relo #23: <byte_off> [396] struct cfs_rq___co_hnr_old.h_nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #23: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_fork': relo #23: no matching targets found
+libbpf: prog 'handle_fork': relo #23: substituting insn #254 w/ invalid insn
+libbpf: prog 'handle_fork': relo #24: <byte_off> [397] struct cfs_rq___co_exec.exec_clock (0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #24: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_fork': relo #24: no matching targets found
+libbpf: prog 'handle_fork': relo #24: substituting insn #263 w/ invalid insn
+libbpf: prog 'handle_fork': relo #25: <byte_off> [398] struct cfs_rq___co_load.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #25: matching candidate #0 <byte_off> [111959] struct cfs_rq.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #25: patched insn #272 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_fork': relo #26: <field_exists> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #26: matching candidate #0 <field_exists> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_fork': relo #26: patched insn #281 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_fork': relo #27: <byte_off> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #27: matching candidate #0 <byte_off> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_fork': relo #27: patched insn #283 (ALU/ALU64) imm 0 -> 32
+libbpf: prog 'handle_fork': relo #28: <byte_off> [400] struct cfs_rq___co_avg.avg_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #28: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_fork': relo #28: no matching targets found
+libbpf: prog 'handle_fork': relo #28: substituting insn #285 w/ invalid insn
+libbpf: prog 'handle_fork': relo #29: <byte_off> [32] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_fork': relo #29: matching candidate #0 <byte_off> [172660] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_fork': relo #29: patched insn #294 (ALU/ALU64) imm 48 -> 48
+libbpf: prog 'handle_fork': relo #30: <byte_off> [401] struct cfs_rq___co_rq.rq (0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #30: matching candidate #0 <byte_off> [111959] struct cfs_rq.rq (0:22 @ offset 312)
+libbpf: prog 'handle_fork': relo #30: patched insn #310 (ALU/ALU64) imm 0 -> 312
+libbpf: prog 'handle_fork': relo #31: <byte_off> [402] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #31: matching candidate #0 <byte_off> [162302] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_fork': relo #31: patched insn #318 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_fork': relo #32: <byte_off> [402] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_fork': relo #32: matching candidate #0 <byte_off> [162302] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_fork': relo #32: patched insn #327 (ALU/ALU64) imm 3536 -> 3536
+libbpf: prog 'handle_fork': relo #33: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_fork': relo #33: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_fork': relo #33: patched insn #336 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_fork': relo #34: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_fork': relo #34: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_fork': relo #34: patched insn #346 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_fork': relo #35: <byte_off> [32] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_fork': relo #35: matching candidate #0 <byte_off> [172660] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_fork': relo #35: patched insn #355 (ALU/ALU64) imm 132 -> 132
+libbpf: prog 'handle_fork': relo #36: <byte_off> [32] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_fork': relo #36: matching candidate #0 <byte_off> [172660] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_fork': relo #36: patched insn #364 (ALU/ALU64) imm 312 -> 312
+libbpf: prog 'handle_fork': relo #37: <byte_off> [32] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_fork': relo #37: matching candidate #0 <byte_off> [172660] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_fork': relo #37: patched insn #373 (ALU/ALU64) imm 296 -> 296
+libbpf: prog 'handle_fork': relo #38: <byte_off> [32] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_fork': relo #38: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_fork': relo #38: patched insn #382 (ALU/ALU64) imm 192 -> 192
+libbpf: prog 'handle_fork': relo #39: <byte_off> [32] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_fork': relo #39: matching candidate #0 <byte_off> [172660] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_fork': relo #39: patched insn #392 (ALU/ALU64) imm 48 -> 48
+libbpf: prog 'handle_fork': relo #40: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_fork': relo #40: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_fork': relo #40: patched insn #400 (ALU/ALU64) imm 2448 -> 2448
+libbpf: sec 'tp_btf/sched_process_exit': found 34 CO-RE relocations
+libbpf: prog 'handle_exit': relo #0: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_exit': relo #0: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_exit': relo #0: patched insn #61 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_exit': relo #1: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_exit': relo #1: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_exit': relo #1: patched insn #70 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_exit': relo #2: <byte_off> [32] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_exit': relo #2: matching candidate #0 <byte_off> [172660] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_exit': relo #2: patched insn #79 (ALU/ALU64) imm 132 -> 132
+libbpf: prog 'handle_exit': relo #3: <byte_off> [32] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_exit': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_exit': relo #3: patched insn #88 (ALU/ALU64) imm 136 -> 136
+libbpf: prog 'handle_exit': relo #4: <byte_off> [32] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_exit': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_exit': relo #4: patched insn #98 (ALU/ALU64) imm 140 -> 140
+libbpf: prog 'handle_exit': relo #5: <byte_off> [32] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_exit': relo #5: matching candidate #0 <byte_off> [172660] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_exit': relo #5: patched insn #107 (ALU/ALU64) imm 1420 -> 1420
+libbpf: prog 'handle_exit': relo #6: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_exit': relo #6: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_exit': relo #6: patched insn #126 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_exit': relo #7: <byte_off> [32] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_exit': relo #7: matching candidate #0 <byte_off> [172660] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_exit': relo #7: patched insn #133 (ALU/ALU64) imm 312 -> 312
+libbpf: prog 'handle_exit': relo #8: <byte_off> [32] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_exit': relo #8: matching candidate #0 <byte_off> [172660] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_exit': relo #8: patched insn #142 (ALU/ALU64) imm 288 -> 288
+libbpf: prog 'handle_exit': relo #9: <byte_off> [32] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_exit': relo #9: matching candidate #0 <byte_off> [172660] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_exit': relo #9: patched insn #151 (ALU/ALU64) imm 296 -> 296
+libbpf: prog 'handle_exit': relo #10: <byte_off> [32] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_exit': relo #10: matching candidate #0 <byte_off> [172660] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_exit': relo #10: patched insn #160 (ALU/ALU64) imm 304 -> 304
+libbpf: prog 'handle_exit': relo #11: <byte_off> [32] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_exit': relo #11: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_exit': relo #11: patched insn #169 (ALU/ALU64) imm 192 -> 192
+libbpf: prog 'handle_exit': relo #12: <byte_off> [32] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_exit': relo #12: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_exit': relo #12: patched insn #178 (ALU/ALU64) imm 200 -> 200
+libbpf: prog 'handle_exit': relo #13: <byte_off> [32] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_exit': relo #13: matching candidate #0 <byte_off> [172660] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_exit': relo #13: patched insn #187 (ALU/ALU64) imm 320 -> 320
+libbpf: prog 'handle_exit': relo #14: <byte_off> [32] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_exit': relo #14: matching candidate #0 <byte_off> [172660] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_exit': relo #14: patched insn #196 (ALU/ALU64) imm 336 -> 336
+libbpf: prog 'handle_exit': relo #15: <byte_off> [32] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_exit': relo #15: matching candidate #0 <byte_off> [172660] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_exit': relo #15: patched insn #205 (ALU/ALU64) imm 280 -> 280
+libbpf: prog 'handle_exit': relo #16: <byte_off> [32] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_exit': relo #16: matching candidate #0 <byte_off> [172660] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_exit': relo #16: patched insn #215 (ALU/ALU64) imm 368 -> 368
+libbpf: prog 'handle_exit': relo #17: <byte_off> [392] struct cfs_rq___co_min.min_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #17: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_exit': relo #17: no matching targets found
+libbpf: prog 'handle_exit': relo #17: substituting insn #225 w/ invalid insn
+libbpf: prog 'handle_exit': relo #18: <field_exists> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #18: matching candidate #0 <field_exists> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_exit': relo #18: patched insn #234 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_exit': relo #19: <byte_off> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #19: matching candidate #0 <byte_off> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_exit': relo #19: patched insn #236 (ALU/ALU64) imm 0 -> 16
+libbpf: prog 'handle_exit': relo #20: <byte_off> [394] struct cfs_rq___co_nr_run.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #20: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_exit': relo #20: no matching targets found
+libbpf: prog 'handle_exit': relo #20: substituting insn #238 w/ invalid insn
+libbpf: prog 'handle_exit': relo #21: <field_exists> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #21: matching candidate #0 <field_exists> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_exit': relo #21: patched insn #247 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_exit': relo #22: <byte_off> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #22: matching candidate #0 <byte_off> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_exit': relo #22: patched insn #249 (ALU/ALU64) imm 0 -> 20
+libbpf: prog 'handle_exit': relo #23: <byte_off> [396] struct cfs_rq___co_hnr_old.h_nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #23: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_exit': relo #23: no matching targets found
+libbpf: prog 'handle_exit': relo #23: substituting insn #251 w/ invalid insn
+libbpf: prog 'handle_exit': relo #24: <byte_off> [397] struct cfs_rq___co_exec.exec_clock (0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #24: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_exit': relo #24: no matching targets found
+libbpf: prog 'handle_exit': relo #24: substituting insn #260 w/ invalid insn
+libbpf: prog 'handle_exit': relo #25: <byte_off> [398] struct cfs_rq___co_load.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #25: matching candidate #0 <byte_off> [111959] struct cfs_rq.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #25: patched insn #269 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_exit': relo #26: <field_exists> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #26: matching candidate #0 <field_exists> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_exit': relo #26: patched insn #278 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_exit': relo #27: <byte_off> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #27: matching candidate #0 <byte_off> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_exit': relo #27: patched insn #280 (ALU/ALU64) imm 0 -> 32
+libbpf: prog 'handle_exit': relo #28: <byte_off> [400] struct cfs_rq___co_avg.avg_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #28: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_exit': relo #28: no matching targets found
+libbpf: prog 'handle_exit': relo #28: substituting insn #282 w/ invalid insn
+libbpf: prog 'handle_exit': relo #29: <byte_off> [32] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_exit': relo #29: matching candidate #0 <byte_off> [172660] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_exit': relo #29: patched insn #291 (ALU/ALU64) imm 48 -> 48
+libbpf: prog 'handle_exit': relo #30: <byte_off> [401] struct cfs_rq___co_rq.rq (0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #30: matching candidate #0 <byte_off> [111959] struct cfs_rq.rq (0:22 @ offset 312)
+libbpf: prog 'handle_exit': relo #30: patched insn #307 (ALU/ALU64) imm 0 -> 312
+libbpf: prog 'handle_exit': relo #31: <byte_off> [402] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #31: matching candidate #0 <byte_off> [162302] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_exit': relo #31: patched insn #315 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_exit': relo #32: <byte_off> [402] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_exit': relo #32: matching candidate #0 <byte_off> [162302] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_exit': relo #32: patched insn #324 (ALU/ALU64) imm 3536 -> 3536
+libbpf: prog 'handle_exit': relo #33: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_exit': relo #33: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_exit': relo #33: patched insn #333 (ALU/ALU64) imm 1908 -> 1908
+libbpf: sec 'tp_btf/sched_process_exec': found 34 CO-RE relocations
+libbpf: prog 'handle_exec': relo #0: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_exec': relo #0: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_exec': relo #0: patched insn #63 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_exec': relo #1: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_exec': relo #1: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_exec': relo #1: patched insn #72 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_exec': relo #2: <byte_off> [32] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_exec': relo #2: matching candidate #0 <byte_off> [172660] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_exec': relo #2: patched insn #81 (ALU/ALU64) imm 132 -> 132
+libbpf: prog 'handle_exec': relo #3: <byte_off> [32] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_exec': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_exec': relo #3: patched insn #90 (ALU/ALU64) imm 136 -> 136
+libbpf: prog 'handle_exec': relo #4: <byte_off> [32] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_exec': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_exec': relo #4: patched insn #100 (ALU/ALU64) imm 140 -> 140
+libbpf: prog 'handle_exec': relo #5: <byte_off> [32] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_exec': relo #5: matching candidate #0 <byte_off> [172660] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_exec': relo #5: patched insn #109 (ALU/ALU64) imm 1420 -> 1420
+libbpf: prog 'handle_exec': relo #6: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_exec': relo #6: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_exec': relo #6: patched insn #128 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_exec': relo #7: <byte_off> [32] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_exec': relo #7: matching candidate #0 <byte_off> [172660] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_exec': relo #7: patched insn #135 (ALU/ALU64) imm 312 -> 312
+libbpf: prog 'handle_exec': relo #8: <byte_off> [32] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_exec': relo #8: matching candidate #0 <byte_off> [172660] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_exec': relo #8: patched insn #144 (ALU/ALU64) imm 288 -> 288
+libbpf: prog 'handle_exec': relo #9: <byte_off> [32] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_exec': relo #9: matching candidate #0 <byte_off> [172660] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_exec': relo #9: patched insn #153 (ALU/ALU64) imm 296 -> 296
+libbpf: prog 'handle_exec': relo #10: <byte_off> [32] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_exec': relo #10: matching candidate #0 <byte_off> [172660] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_exec': relo #10: patched insn #162 (ALU/ALU64) imm 304 -> 304
+libbpf: prog 'handle_exec': relo #11: <byte_off> [32] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_exec': relo #11: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_exec': relo #11: patched insn #171 (ALU/ALU64) imm 192 -> 192
+libbpf: prog 'handle_exec': relo #12: <byte_off> [32] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_exec': relo #12: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_exec': relo #12: patched insn #180 (ALU/ALU64) imm 200 -> 200
+libbpf: prog 'handle_exec': relo #13: <byte_off> [32] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_exec': relo #13: matching candidate #0 <byte_off> [172660] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_exec': relo #13: patched insn #189 (ALU/ALU64) imm 320 -> 320
+libbpf: prog 'handle_exec': relo #14: <byte_off> [32] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_exec': relo #14: matching candidate #0 <byte_off> [172660] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_exec': relo #14: patched insn #198 (ALU/ALU64) imm 336 -> 336
+libbpf: prog 'handle_exec': relo #15: <byte_off> [32] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_exec': relo #15: matching candidate #0 <byte_off> [172660] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_exec': relo #15: patched insn #207 (ALU/ALU64) imm 280 -> 280
+libbpf: prog 'handle_exec': relo #16: <byte_off> [32] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_exec': relo #16: matching candidate #0 <byte_off> [172660] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_exec': relo #16: patched insn #217 (ALU/ALU64) imm 368 -> 368
+libbpf: prog 'handle_exec': relo #17: <byte_off> [392] struct cfs_rq___co_min.min_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #17: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_exec': relo #17: no matching targets found
+libbpf: prog 'handle_exec': relo #17: substituting insn #227 w/ invalid insn
+libbpf: prog 'handle_exec': relo #18: <field_exists> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #18: matching candidate #0 <field_exists> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_exec': relo #18: patched insn #236 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_exec': relo #19: <byte_off> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #19: matching candidate #0 <byte_off> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_exec': relo #19: patched insn #238 (ALU/ALU64) imm 0 -> 16
+libbpf: prog 'handle_exec': relo #20: <byte_off> [394] struct cfs_rq___co_nr_run.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #20: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_exec': relo #20: no matching targets found
+libbpf: prog 'handle_exec': relo #20: substituting insn #240 w/ invalid insn
+libbpf: prog 'handle_exec': relo #21: <field_exists> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #21: matching candidate #0 <field_exists> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_exec': relo #21: patched insn #249 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_exec': relo #22: <byte_off> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #22: matching candidate #0 <byte_off> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_exec': relo #22: patched insn #251 (ALU/ALU64) imm 0 -> 20
+libbpf: prog 'handle_exec': relo #23: <byte_off> [396] struct cfs_rq___co_hnr_old.h_nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #23: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_exec': relo #23: no matching targets found
+libbpf: prog 'handle_exec': relo #23: substituting insn #253 w/ invalid insn
+libbpf: prog 'handle_exec': relo #24: <byte_off> [397] struct cfs_rq___co_exec.exec_clock (0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #24: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_exec': relo #24: no matching targets found
+libbpf: prog 'handle_exec': relo #24: substituting insn #262 w/ invalid insn
+libbpf: prog 'handle_exec': relo #25: <byte_off> [398] struct cfs_rq___co_load.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #25: matching candidate #0 <byte_off> [111959] struct cfs_rq.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #25: patched insn #271 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_exec': relo #26: <field_exists> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #26: matching candidate #0 <field_exists> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_exec': relo #26: patched insn #280 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_exec': relo #27: <byte_off> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #27: matching candidate #0 <byte_off> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_exec': relo #27: patched insn #282 (ALU/ALU64) imm 0 -> 32
+libbpf: prog 'handle_exec': relo #28: <byte_off> [400] struct cfs_rq___co_avg.avg_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #28: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_exec': relo #28: no matching targets found
+libbpf: prog 'handle_exec': relo #28: substituting insn #284 w/ invalid insn
+libbpf: prog 'handle_exec': relo #29: <byte_off> [32] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_exec': relo #29: matching candidate #0 <byte_off> [172660] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_exec': relo #29: patched insn #293 (ALU/ALU64) imm 48 -> 48
+libbpf: prog 'handle_exec': relo #30: <byte_off> [401] struct cfs_rq___co_rq.rq (0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #30: matching candidate #0 <byte_off> [111959] struct cfs_rq.rq (0:22 @ offset 312)
+libbpf: prog 'handle_exec': relo #30: patched insn #309 (ALU/ALU64) imm 0 -> 312
+libbpf: prog 'handle_exec': relo #31: <byte_off> [402] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #31: matching candidate #0 <byte_off> [162302] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_exec': relo #31: patched insn #317 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_exec': relo #32: <byte_off> [402] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_exec': relo #32: matching candidate #0 <byte_off> [162302] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_exec': relo #32: patched insn #326 (ALU/ALU64) imm 3536 -> 3536
+libbpf: CO-RE relocating [496] struct linux_binprm: found target candidate [142250] struct linux_binprm in [vmlinux]
+libbpf: prog 'handle_exec': relo #33: <byte_off> [496] struct linux_binprm.filename (0:19 @ offset 96)
+libbpf: prog 'handle_exec': relo #33: matching candidate #0 <byte_off> [142250] struct linux_binprm.filename (0:19 @ offset 96)
+libbpf: prog 'handle_exec': relo #33: patched insn #337 (ALU/ALU64) imm 96 -> 96
+libbpf: sec 'kprobe/dequeue_task_fair': found 35 CO-RE relocations
+libbpf: CO-RE relocating [363] struct user_pt_regs: found target candidate [182141] struct user_pt_regs in [vmlinux]
+libbpf: prog 'handle_dequeue': relo #0: <byte_off> [363] struct user_pt_regs.regs[0] (0:0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #0: matching candidate #0 <byte_off> [182141] struct user_pt_regs.regs[0] (0:0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #0: patched insn #0 (LDX/ST/STX) off 0 -> 0
+libbpf: prog 'handle_dequeue': relo #1: <byte_off> [363] struct user_pt_regs.regs[1] (0:0:1 @ offset 8)
+libbpf: prog 'handle_dequeue': relo #1: matching candidate #0 <byte_off> [182141] struct user_pt_regs.regs[1] (0:0:1 @ offset 8)
+libbpf: prog 'handle_dequeue': relo #1: patched insn #1 (LDX/ST/STX) off 8 -> 8
+libbpf: prog 'handle_dequeue': relo #2: <byte_off> [32] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_dequeue': relo #2: matching candidate #0 <byte_off> [172660] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_dequeue': relo #2: patched insn #2 (ALU/ALU64) imm 48 -> 48
+libbpf: prog 'handle_dequeue': relo #3: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_dequeue': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_dequeue': relo #3: patched insn #72 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_dequeue': relo #4: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_dequeue': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_dequeue': relo #4: patched insn #81 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_dequeue': relo #5: <byte_off> [32] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_dequeue': relo #5: matching candidate #0 <byte_off> [172660] struct task_struct.prio (0:15 @ offset 132)
+libbpf: prog 'handle_dequeue': relo #5: patched insn #91 (ALU/ALU64) imm 132 -> 132
+libbpf: prog 'handle_dequeue': relo #6: <byte_off> [32] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_dequeue': relo #6: matching candidate #0 <byte_off> [172660] struct task_struct.static_prio (0:16 @ offset 136)
+libbpf: prog 'handle_dequeue': relo #6: patched insn #100 (ALU/ALU64) imm 136 -> 136
+libbpf: prog 'handle_dequeue': relo #7: <byte_off> [32] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_dequeue': relo #7: matching candidate #0 <byte_off> [172660] struct task_struct.normal_prio (0:17 @ offset 140)
+libbpf: prog 'handle_dequeue': relo #7: patched insn #110 (ALU/ALU64) imm 140 -> 140
+libbpf: prog 'handle_dequeue': relo #8: <byte_off> [32] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_dequeue': relo #8: matching candidate #0 <byte_off> [172660] struct task_struct.policy (0:37 @ offset 1420)
+libbpf: prog 'handle_dequeue': relo #8: patched insn #119 (ALU/ALU64) imm 1420 -> 1420
+libbpf: prog 'handle_dequeue': relo #9: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_dequeue': relo #9: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_dequeue': relo #9: patched insn #138 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_dequeue': relo #10: <byte_off> [32] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_dequeue': relo #10: matching candidate #0 <byte_off> [172660] struct task_struct.se.vruntime (0:19:14 @ offset 312)
+libbpf: prog 'handle_dequeue': relo #10: patched insn #145 (ALU/ALU64) imm 312 -> 312
+libbpf: prog 'handle_dequeue': relo #11: <byte_off> [32] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_dequeue': relo #11: matching candidate #0 <byte_off> [172660] struct task_struct.se.exec_start (0:19:11 @ offset 288)
+libbpf: prog 'handle_dequeue': relo #11: patched insn #154 (ALU/ALU64) imm 288 -> 288
+libbpf: prog 'handle_dequeue': relo #12: <byte_off> [32] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_dequeue': relo #12: matching candidate #0 <byte_off> [172660] struct task_struct.se.sum_exec_runtime (0:19:12 @ offset 296)
+libbpf: prog 'handle_dequeue': relo #12: patched insn #163 (ALU/ALU64) imm 296 -> 296
+libbpf: prog 'handle_dequeue': relo #13: <byte_off> [32] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_dequeue': relo #13: matching candidate #0 <byte_off> [172660] struct task_struct.se.prev_sum_exec_runtime (0:19:13 @ offset 304)
+libbpf: prog 'handle_dequeue': relo #13: patched insn #172 (ALU/ALU64) imm 304 -> 304
+libbpf: prog 'handle_dequeue': relo #14: <byte_off> [32] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_dequeue': relo #14: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.weight (0:19:0:0 @ offset 192)
+libbpf: prog 'handle_dequeue': relo #14: patched insn #181 (ALU/ALU64) imm 192 -> 192
+libbpf: prog 'handle_dequeue': relo #15: <byte_off> [32] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_dequeue': relo #15: matching candidate #0 <byte_off> [172660] struct task_struct.se.load.inv_weight (0:19:0:1 @ offset 200)
+libbpf: prog 'handle_dequeue': relo #15: patched insn #190 (ALU/ALU64) imm 200 -> 200
+libbpf: prog 'handle_dequeue': relo #16: <byte_off> [32] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_dequeue': relo #16: matching candidate #0 <byte_off> [172660] struct task_struct.se.vlag (0:19:15 @ offset 320)
+libbpf: prog 'handle_dequeue': relo #16: patched insn #199 (ALU/ALU64) imm 320 -> 320
+libbpf: prog 'handle_dequeue': relo #17: <byte_off> [32] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_dequeue': relo #17: matching candidate #0 <byte_off> [172660] struct task_struct.se.slice (0:19:17 @ offset 336)
+libbpf: prog 'handle_dequeue': relo #17: patched insn #208 (ALU/ALU64) imm 336 -> 336
+libbpf: prog 'handle_dequeue': relo #18: <byte_off> [32] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_dequeue': relo #18: matching candidate #0 <byte_off> [172660] struct task_struct.se.on_rq (0:19:7 @ offset 280)
+libbpf: prog 'handle_dequeue': relo #18: patched insn #217 (ALU/ALU64) imm 280 -> 280
+libbpf: prog 'handle_dequeue': relo #19: <byte_off> [32] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_dequeue': relo #19: matching candidate #0 <byte_off> [172660] struct task_struct.se.cfs_rq (0:19:21 @ offset 368)
+libbpf: prog 'handle_dequeue': relo #19: patched insn #227 (ALU/ALU64) imm 368 -> 368
+libbpf: prog 'handle_dequeue': relo #20: <byte_off> [392] struct cfs_rq___co_min.min_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #20: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #20: no matching targets found
+libbpf: prog 'handle_dequeue': relo #20: substituting insn #236 w/ invalid insn
+libbpf: prog 'handle_dequeue': relo #21: <field_exists> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #21: matching candidate #0 <field_exists> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_dequeue': relo #21: patched insn #245 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_dequeue': relo #22: <byte_off> [393] struct cfs_rq___co_nr_q.nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #22: matching candidate #0 <byte_off> [111959] struct cfs_rq.nr_queued (0:1 @ offset 16)
+libbpf: prog 'handle_dequeue': relo #22: patched insn #247 (ALU/ALU64) imm 0 -> 16
+libbpf: prog 'handle_dequeue': relo #23: <byte_off> [394] struct cfs_rq___co_nr_run.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #23: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #23: no matching targets found
+libbpf: prog 'handle_dequeue': relo #23: substituting insn #249 w/ invalid insn
+libbpf: prog 'handle_dequeue': relo #24: <field_exists> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #24: matching candidate #0 <field_exists> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_dequeue': relo #24: patched insn #258 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_dequeue': relo #25: <byte_off> [395] struct cfs_rq___co_hnr_q.h_nr_queued (0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #25: matching candidate #0 <byte_off> [111959] struct cfs_rq.h_nr_queued (0:2 @ offset 20)
+libbpf: prog 'handle_dequeue': relo #25: patched insn #260 (ALU/ALU64) imm 0 -> 20
+libbpf: prog 'handle_dequeue': relo #26: <byte_off> [396] struct cfs_rq___co_hnr_old.h_nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #26: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #26: no matching targets found
+libbpf: prog 'handle_dequeue': relo #26: substituting insn #262 w/ invalid insn
+libbpf: prog 'handle_dequeue': relo #27: <byte_off> [397] struct cfs_rq___co_exec.exec_clock (0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #27: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #27: no matching targets found
+libbpf: prog 'handle_dequeue': relo #27: substituting insn #271 w/ invalid insn
+libbpf: prog 'handle_dequeue': relo #28: <byte_off> [398] struct cfs_rq___co_load.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #28: matching candidate #0 <byte_off> [111959] struct cfs_rq.load.weight (0:0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #28: patched insn #280 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_dequeue': relo #29: <field_exists> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #29: matching candidate #0 <field_exists> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_dequeue': relo #29: patched insn #289 (ALU/ALU64) imm 1 -> 1
+libbpf: prog 'handle_dequeue': relo #30: <byte_off> [399] struct cfs_rq___co_sumw.sum_w_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #30: matching candidate #0 <byte_off> [111959] struct cfs_rq.sum_w_vruntime (0:5 @ offset 32)
+libbpf: prog 'handle_dequeue': relo #30: patched insn #291 (ALU/ALU64) imm 0 -> 32
+libbpf: prog 'handle_dequeue': relo #31: <byte_off> [400] struct cfs_rq___co_avg.avg_vruntime (0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #31: non-matching candidate #0 <byte_off> [111959] struct cfs_rq (0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #31: no matching targets found
+libbpf: prog 'handle_dequeue': relo #31: substituting insn #293 w/ invalid insn
+libbpf: prog 'handle_dequeue': relo #32: <byte_off> [32] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_dequeue': relo #32: matching candidate #0 <byte_off> [172660] struct task_struct.__state (0:1 @ offset 48)
+libbpf: prog 'handle_dequeue': relo #32: patched insn #302 (ALU/ALU64) imm 48 -> 48
+libbpf: prog 'handle_dequeue': relo #33: <byte_off> [402] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #33: matching candidate #0 <byte_off> [162302] struct rq.nr_running (0:0 @ offset 0)
+libbpf: prog 'handle_dequeue': relo #33: patched insn #311 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_dequeue': relo #34: <byte_off> [402] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_dequeue': relo #34: matching candidate #0 <byte_off> [162302] struct rq.clock (0:33 @ offset 3536)
+libbpf: prog 'handle_dequeue': relo #34: patched insn #321 (ALU/ALU64) imm 3536 -> 3536
+libbpf: sec 'kprobe/prepare_to_wait': found 7 CO-RE relocations
+libbpf: prog 'handle_prepare_to_wait': relo #0: <byte_off> [363] struct user_pt_regs.regs[1] (0:0:1 @ offset 8)
+libbpf: prog 'handle_prepare_to_wait': relo #0: matching candidate #0 <byte_off> [182141] struct user_pt_regs.regs[1] (0:0:1 @ offset 8)
+libbpf: prog 'handle_prepare_to_wait': relo #0: patched insn #0 (LDX/ST/STX) off 8 -> 8
+libbpf: prog 'handle_prepare_to_wait': relo #1: <byte_off> [363] struct user_pt_regs.regs[0] (0:0:0 @ offset 0)
+libbpf: prog 'handle_prepare_to_wait': relo #1: matching candidate #0 <byte_off> [182141] struct user_pt_regs.regs[0] (0:0:0 @ offset 0)
+libbpf: prog 'handle_prepare_to_wait': relo #1: patched insn #1 (LDX/ST/STX) off 0 -> 0
+libbpf: CO-RE relocating [508] struct wait_queue_entry: found target candidate [184327] struct wait_queue_entry in [vmlinux]
+libbpf: prog 'handle_prepare_to_wait': relo #2: <byte_off> [508] struct wait_queue_entry.flags (0:0 @ offset 0)
+libbpf: prog 'handle_prepare_to_wait': relo #2: matching candidate #0 <byte_off> [184327] struct wait_queue_entry.flags (0:0 @ offset 0)
+libbpf: prog 'handle_prepare_to_wait': relo #2: patched insn #22 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_prepare_to_wait': relo #3: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_prepare_to_wait': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_prepare_to_wait': relo #3: patched insn #31 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_prepare_to_wait': relo #4: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_prepare_to_wait': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_prepare_to_wait': relo #4: patched insn #41 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_prepare_to_wait': relo #5: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_prepare_to_wait': relo #5: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_prepare_to_wait': relo #5: patched insn #50 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_prepare_to_wait': relo #6: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_prepare_to_wait': relo #6: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_prepare_to_wait': relo #6: patched insn #174 (ALU/ALU64) imm 2448 -> 2448
+libbpf: sec 'kprobe/prepare_to_wait_exclusive': found 7 CO-RE relocations
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #0: <byte_off> [363] struct user_pt_regs.regs[1] (0:0:1 @ offset 8)
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #0: matching candidate #0 <byte_off> [182141] struct user_pt_regs.regs[1] (0:0:1 @ offset 8)
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #0: patched insn #0 (LDX/ST/STX) off 8 -> 8
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #1: <byte_off> [363] struct user_pt_regs.regs[0] (0:0:0 @ offset 0)
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #1: matching candidate #0 <byte_off> [182141] struct user_pt_regs.regs[0] (0:0:0 @ offset 0)
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #1: patched insn #1 (LDX/ST/STX) off 0 -> 0
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #2: <byte_off> [508] struct wait_queue_entry.flags (0:0 @ offset 0)
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #2: matching candidate #0 <byte_off> [184327] struct wait_queue_entry.flags (0:0 @ offset 0)
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #2: patched insn #22 (ALU/ALU64) imm 0 -> 0
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #3: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #3: patched insn #31 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #4: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #4: patched insn #41 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #5: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #5: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #5: patched insn #50 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #6: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #6: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_prepare_to_wait_exclusive': relo #6: patched insn #174 (ALU/ALU64) imm 2448 -> 2448
+libbpf: sec 'kprobe/__mutex_lock_slowpath': found 8 CO-RE relocations
+libbpf: prog 'handle_mutex_lock_slowpath': relo #0: <byte_off> [363] struct user_pt_regs.regs[0] (0:0:0 @ offset 0)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #0: matching candidate #0 <byte_off> [182141] struct user_pt_regs.regs[0] (0:0:0 @ offset 0)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #0: patched insn #0 (LDX/ST/STX) off 0 -> 0
+libbpf: prog 'handle_mutex_lock_slowpath': relo #1: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #1: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #1: patched insn #14 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_mutex_lock_slowpath': relo #2: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #2: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #2: patched insn #24 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_mutex_lock_slowpath': relo #3: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #3: patched insn #33 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_mutex_lock_slowpath': relo #4: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #4: patched insn #136 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_mutex_lock_slowpath': relo #5: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #5: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #5: patched insn #144 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_mutex_lock_slowpath': relo #6: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #6: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #6: patched insn #153 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_mutex_lock_slowpath': relo #7: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #7: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_mutex_lock_slowpath': relo #7: patched insn #276 (ALU/ALU64) imm 2448 -> 2448
+libbpf: sec 'kprobe/__wait_on_bit': found 8 CO-RE relocations
+libbpf: prog 'handle_wait_on_bit': relo #0: <byte_off> [363] struct user_pt_regs.regs[0] (0:0:0 @ offset 0)
+libbpf: prog 'handle_wait_on_bit': relo #0: matching candidate #0 <byte_off> [182141] struct user_pt_regs.regs[0] (0:0:0 @ offset 0)
+libbpf: prog 'handle_wait_on_bit': relo #0: patched insn #0 (LDX/ST/STX) off 0 -> 0
+libbpf: prog 'handle_wait_on_bit': relo #1: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_wait_on_bit': relo #1: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_wait_on_bit': relo #1: patched insn #14 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_wait_on_bit': relo #2: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_wait_on_bit': relo #2: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_wait_on_bit': relo #2: patched insn #24 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_wait_on_bit': relo #3: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wait_on_bit': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wait_on_bit': relo #3: patched insn #33 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_wait_on_bit': relo #4: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_wait_on_bit': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_wait_on_bit': relo #4: patched insn #136 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_wait_on_bit': relo #5: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_wait_on_bit': relo #5: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_wait_on_bit': relo #5: patched insn #144 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_wait_on_bit': relo #6: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wait_on_bit': relo #6: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wait_on_bit': relo #6: patched insn #153 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_wait_on_bit': relo #7: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wait_on_bit': relo #7: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wait_on_bit': relo #7: patched insn #276 (ALU/ALU64) imm 2448 -> 2448
+libbpf: sec 'kprobe/wait_on_page_bit': found 8 CO-RE relocations
+libbpf: prog 'handle_wait_on_page_bit': relo #0: <byte_off> [363] struct user_pt_regs.regs[0] (0:0:0 @ offset 0)
+libbpf: prog 'handle_wait_on_page_bit': relo #0: matching candidate #0 <byte_off> [182141] struct user_pt_regs.regs[0] (0:0:0 @ offset 0)
+libbpf: prog 'handle_wait_on_page_bit': relo #0: patched insn #0 (LDX/ST/STX) off 0 -> 0
+libbpf: prog 'handle_wait_on_page_bit': relo #1: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_wait_on_page_bit': relo #1: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_wait_on_page_bit': relo #1: patched insn #14 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_wait_on_page_bit': relo #2: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_wait_on_page_bit': relo #2: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_wait_on_page_bit': relo #2: patched insn #24 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_wait_on_page_bit': relo #3: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wait_on_page_bit': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wait_on_page_bit': relo #3: patched insn #33 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_wait_on_page_bit': relo #4: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_wait_on_page_bit': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_wait_on_page_bit': relo #4: patched insn #136 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_wait_on_page_bit': relo #5: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_wait_on_page_bit': relo #5: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_wait_on_page_bit': relo #5: patched insn #144 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_wait_on_page_bit': relo #6: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wait_on_page_bit': relo #6: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wait_on_page_bit': relo #6: patched insn #153 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_wait_on_page_bit': relo #7: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wait_on_page_bit': relo #7: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_wait_on_page_bit': relo #7: patched insn #276 (ALU/ALU64) imm 2448 -> 2448
+libbpf: sec 'kprobe/poll_schedule_timeout': found 5 CO-RE relocations
+libbpf: prog 'handle_poll_schedule_timeout': relo #0: <byte_off> [363] struct user_pt_regs.regs[0] (0:0:0 @ offset 0)
+libbpf: prog 'handle_poll_schedule_timeout': relo #0: matching candidate #0 <byte_off> [182141] struct user_pt_regs.regs[0] (0:0:0 @ offset 0)
+libbpf: prog 'handle_poll_schedule_timeout': relo #0: patched insn #0 (LDX/ST/STX) off 0 -> 0
+libbpf: prog 'handle_poll_schedule_timeout': relo #1: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_poll_schedule_timeout': relo #1: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_poll_schedule_timeout': relo #1: patched insn #16 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_poll_schedule_timeout': relo #2: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_poll_schedule_timeout': relo #2: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_poll_schedule_timeout': relo #2: patched insn #24 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_poll_schedule_timeout': relo #3: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_poll_schedule_timeout': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_poll_schedule_timeout': relo #3: patched insn #33 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_poll_schedule_timeout': relo #4: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_poll_schedule_timeout': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_poll_schedule_timeout': relo #4: patched insn #156 (ALU/ALU64) imm 2448 -> 2448
+libbpf: sec 'kprobe/schedule_timeout': found 7 CO-RE relocations
+libbpf: prog 'handle_schedule_timeout': relo #0: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_schedule_timeout': relo #0: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_schedule_timeout': relo #0: patched insn #13 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_schedule_timeout': relo #1: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_schedule_timeout': relo #1: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_schedule_timeout': relo #1: patched insn #23 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_schedule_timeout': relo #2: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_schedule_timeout': relo #2: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_schedule_timeout': relo #2: patched insn #32 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_schedule_timeout': relo #3: <byte_off> [32] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_schedule_timeout': relo #3: matching candidate #0 <byte_off> [172660] struct task_struct.pid (0:89 @ offset 1904)
+libbpf: prog 'handle_schedule_timeout': relo #3: patched insn #138 (ALU/ALU64) imm 1904 -> 1904
+libbpf: prog 'handle_schedule_timeout': relo #4: <byte_off> [32] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_schedule_timeout': relo #4: matching candidate #0 <byte_off> [172660] struct task_struct.tgid (0:90 @ offset 1908)
+libbpf: prog 'handle_schedule_timeout': relo #4: patched insn #146 (ALU/ALU64) imm 1908 -> 1908
+libbpf: prog 'handle_schedule_timeout': relo #5: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_schedule_timeout': relo #5: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_schedule_timeout': relo #5: patched insn #155 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_schedule_timeout': relo #6: <byte_off> [32] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_schedule_timeout': relo #6: matching candidate #0 <byte_off> [172660] struct task_struct.comm (0:124 @ offset 2448)
+libbpf: prog 'handle_schedule_timeout': relo #6: patched insn #278 (ALU/ALU64) imm 2448 -> 2448
+libbpf: prog 'handle_dequeue': added 90 insns from sub-prog 'emit_wq_summary_callback'
+libbpf: prog 'handle_dequeue': insn #353 relocated, imm 43 points to subprog 'emit_wq_summary_callback' (now at 397 offset)
+libbpf: prog 'handle_dequeue': insn #383 relocated, imm 13 points to subprog 'emit_wq_summary_callback' (now at 397 offset)
+libbpf: map 'events': created successfully, fd=3
+libbpf: map 'wait_queue_map': created successfully, fd=4
+libbpf: map 'wait_queue_size_map': created successfully, fd=5
+libbpf: prog 'handle_sched_switch': BPF program load failed: -EINVAL
+libbpf: prog 'handle_sched_switch': -- BEGIN PROG LOAD LOG --
+0: R1=ctx() R10=fp0
+; int BPF_PROG(handle_sched_switch, @ scheduler_deep_tracer.bpf.c:345
+0: (79) r9 = *(u64 *)(r1 +16)
+func 'sched_switch' arg2 has btf_id 172660 type STRUCT 'task_struct'
+1: R1=ctx() R9=trusted_ptr_task_struct()
+1: (79) r7 = *(u64 *)(r1 +8)
+func 'sched_switch' arg1 has btf_id 172660 type STRUCT 'task_struct'
+2: R1=ctx() R7=trusted_ptr_task_struct()
+2: (79) r6 = *(u64 *)(r1 +0)          ; R1=ctx() R6=scalar()
+3: (b7) r8 = 0                        ; R8=0
+; struct sched_event *e = bpf_ringbuf_reserve(&events, sizeof(*e), 0); @ scheduler_deep_tracer.bpf.c:350
+4: (18) r1 = 0xffff0000c5e7be00       ; R1=map_ptr(map=events,ks=0,vs=0)
+6: (b7) r2 = 368                      ; R2=368
+7: (b7) r3 = 0                        ; R3=0
+8: (85) call bpf_ringbuf_reserve#131          ; R0=ringbuf_mem_or_null(id=2,ref_obj_id=2,sz=368) refs=2
+; if (!e) return 0; @ scheduler_deep_tracer.bpf.c:351
+9: (15) if r0 == 0x0 goto pc+407      ; R0=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+10: (7b) *(u64 *)(r10 -24) = r7       ; R7=trusted_ptr_task_struct() R10=fp0 fp-24=trusted_ptr_task_struct() refs=2
+11: (7b) *(u64 *)(r10 -16) = r0       ; R0=ringbuf_mem(ref_obj_id=2,sz=368) R10=fp0 fp-16=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+12: (bf) r7 = r0                      ; R0=ringbuf_mem(ref_obj_id=2,sz=368) R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+; __builtin_memset(e, 0, sizeof(*e)); @ scheduler_deep_tracer.bpf.c:353
+13: (7b) *(u64 *)(r7 +360) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+14: (7b) *(u64 *)(r7 +352) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+15: (7b) *(u64 *)(r7 +344) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+16: (7b) *(u64 *)(r7 +336) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+17: (7b) *(u64 *)(r7 +328) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+18: (7b) *(u64 *)(r7 +320) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+19: (7b) *(u64 *)(r7 +312) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+20: (7b) *(u64 *)(r7 +304) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+21: (7b) *(u64 *)(r7 +296) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+22: (7b) *(u64 *)(r7 +288) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+23: (7b) *(u64 *)(r7 +280) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+24: (7b) *(u64 *)(r7 +272) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+25: (7b) *(u64 *)(r7 +264) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+26: (7b) *(u64 *)(r7 +256) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+27: (7b) *(u64 *)(r7 +248) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+28: (7b) *(u64 *)(r7 +240) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+29: (7b) *(u64 *)(r7 +232) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+30: (7b) *(u64 *)(r7 +224) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+31: (7b) *(u64 *)(r7 +216) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+32: (7b) *(u64 *)(r7 +208) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+33: (7b) *(u64 *)(r7 +200) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+34: (7b) *(u64 *)(r7 +192) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+35: (7b) *(u64 *)(r7 +184) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+36: (7b) *(u64 *)(r7 +176) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+37: (7b) *(u64 *)(r7 +168) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+38: (7b) *(u64 *)(r7 +160) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+39: (7b) *(u64 *)(r7 +152) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+40: (7b) *(u64 *)(r7 +144) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+41: (7b) *(u64 *)(r7 +136) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+42: (7b) *(u64 *)(r7 +128) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+43: (7b) *(u64 *)(r7 +120) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+44: (7b) *(u64 *)(r7 +112) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+45: (7b) *(u64 *)(r7 +104) = r8       ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+46: (7b) *(u64 *)(r7 +96) = r8        ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+47: (7b) *(u64 *)(r7 +88) = r8        ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+48: (7b) *(u64 *)(r7 +80) = r8        ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+49: (7b) *(u64 *)(r7 +72) = r8        ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+50: (7b) *(u64 *)(r7 +64) = r8        ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+51: (7b) *(u64 *)(r7 +56) = r8        ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+52: (7b) *(u64 *)(r7 +48) = r8        ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+53: (7b) *(u64 *)(r7 +40) = r8        ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+54: (7b) *(u64 *)(r7 +32) = r8        ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+55: (7b) *(u64 *)(r7 +24) = r8        ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+56: (7b) *(u64 *)(r7 +16) = r8        ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+57: (7b) *(u64 *)(r7 +8) = r8         ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+58: (7b) *(u64 *)(r7 +0) = r8         ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+; e->timestamp_ns = bpf_ktime_get_ns(); @ scheduler_deep_tracer.bpf.c:354
+59: (85) call bpf_ktime_get_ns#5      ; R0=scalar() refs=2
+60: (7b) *(u64 *)(r7 +0) = r0         ; R0=scalar() R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+61: (b4) w2 = 1                       ; R2=1 refs=2
+62: (b4) w1 = 1                       ; R1=1 refs=2
+; int BPF_PROG(handle_sched_switch, @ scheduler_deep_tracer.bpf.c:345
+63: (55) if r6 != 0x0 goto pc+1       ; R6=0 refs=2
+64: (b4) w1 = 0                       ; R1=0 refs=2
+; e->event_type   = EVT_SWITCH; @ scheduler_deep_tracer.bpf.c:355
+65: (63) *(u32 *)(r7 +8) = r2         ; R2=1 R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+; e->cpu          = bpf_get_smp_processor_id(); @ scheduler_deep_tracer.bpf.c:356
+66: (7b) *(u64 *)(r10 -32) = r1       ; R1=0 R10=fp0 fp-32=0 refs=2
+67: (85) call bpf_get_smp_processor_id#8      ; R0=scalar(smin=smin32=0,smax=umax=smax32=umax32=7,var_off=(0x0; 0x7)) refs=2
+68: (79) r1 = *(u64 *)(r10 -32)       ; R1=0 R10=fp0 fp-32=0 refs=2
+; e->preempt      = preempt ? 1 : 0; @ scheduler_deep_tracer.bpf.c:357
+69: (73) *(u8 *)(r7 +328) = r1        ; R1=0 R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+; e->cpu          = bpf_get_smp_processor_id(); @ scheduler_deep_tracer.bpf.c:356
+70: (63) *(u32 *)(r7 +12) = r0        ; R0=scalar(smin=smin32=0,smax=umax=smax32=umax32=7,var_off=(0x0; 0x7)) R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+71: (b7) r1 = 1904                    ; R1=1904 refs=2
+72: (bf) r3 = r9                      ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+73: (0f) r3 += r1                     ; R1=1904 R3=trusted_ptr_task_struct(off=1904) refs=2
+74: (bf) r1 = r10                     ; R1=fp0 R10=fp0 refs=2
+75: (07) r1 += -8                     ; R1=fp-8 refs=2
+; e->pid         = BPF_CORE_READ(t, pid); @ scheduler_deep_tracer.bpf.c:172
+76: (b4) w2 = 4                       ; R2=4 refs=2
+77: (85) call bpf_probe_read_kernel#113       ; R0=scalar() fp-8=????mmmm refs=2
+78: (61) r1 = *(u32 *)(r10 -8)        ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R10=fp0 fp-8=????mmmm refs=2
+79: (63) *(u32 *)(r7 +16) = r1        ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+80: (b7) r1 = 1908                    ; R1=1908 refs=2
+81: (bf) r3 = r9                      ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+82: (0f) r3 += r1                     ; R1=1908 R3=trusted_ptr_task_struct(off=1908) refs=2
+83: (bf) r1 = r10                     ; R1=fp0 R10=fp0 refs=2
+84: (07) r1 += -8                     ; R1=fp-8 refs=2
+; e->tgid        = BPF_CORE_READ(t, tgid); @ scheduler_deep_tracer.bpf.c:173
+85: (b4) w2 = 4                       ; R2=4 refs=2
+86: (85) call bpf_probe_read_kernel#113       ; R0=scalar() fp-8=????mmmm refs=2
+87: (61) r1 = *(u32 *)(r10 -8)        ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R10=fp0 fp-8=????mmmm refs=2
+88: (63) *(u32 *)(r7 +20) = r1        ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+89: (b7) r1 = 132                     ; R1=132 refs=2
+90: (bf) r3 = r9                      ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+91: (0f) r3 += r1                     ; R1=132 R3=trusted_ptr_task_struct(off=132) refs=2
+92: (bf) r1 = r10                     ; R1=fp0 R10=fp0 refs=2
+93: (07) r1 += -8                     ; R1=fp-8 refs=2
+; e->prio        = BPF_CORE_READ(t, prio); @ scheduler_deep_tracer.bpf.c:174
+94: (b4) w2 = 4                       ; R2=4 refs=2
+95: (85) call bpf_probe_read_kernel#113       ; R0=scalar() fp-8=????mmmm refs=2
+96: (61) r1 = *(u32 *)(r10 -8)        ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R10=fp0 fp-8=????mmmm refs=2
+97: (63) *(u32 *)(r7 +40) = r1        ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+98: (b7) r1 = 136                     ; R1=136 refs=2
+99: (bf) r6 = r9                      ; R6=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+100: (0f) r6 += r1                    ; R1=136 R6=trusted_ptr_task_struct(off=136) refs=2
+101: (bf) r1 = r10                    ; R1=fp0 R10=fp0 refs=2
+102: (07) r1 += -8                    ; R1=fp-8 refs=2
+; e->static_prio = BPF_CORE_READ(t, static_prio); @ scheduler_deep_tracer.bpf.c:175
+103: (b4) w2 = 4                      ; R2=4 refs=2
+104: (bf) r3 = r6                     ; R3=trusted_ptr_task_struct(off=136) R6=trusted_ptr_task_struct(off=136) refs=2
+105: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-8=????mmmm refs=2
+106: (61) r1 = *(u32 *)(r10 -8)       ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R10=fp0 fp-8=????mmmm refs=2
+107: (63) *(u32 *)(r7 +44) = r1       ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+108: (b7) r1 = 140                    ; R1=140 refs=2
+109: (bf) r3 = r9                     ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+110: (0f) r3 += r1                    ; R1=140 R3=trusted_ptr_task_struct(off=140) refs=2
+111: (bf) r1 = r10                    ; R1=fp0 R10=fp0 refs=2
+112: (07) r1 += -8                    ; R1=fp-8 refs=2
+; e->normal_prio = BPF_CORE_READ(t, normal_prio); @ scheduler_deep_tracer.bpf.c:176
+113: (b4) w2 = 4                      ; R2=4 refs=2
+114: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-8=????mmmm refs=2
+115: (61) r1 = *(u32 *)(r10 -8)       ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R10=fp0 fp-8=????mmmm refs=2
+116: (63) *(u32 *)(r7 +48) = r1       ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+117: (b7) r1 = 1420                   ; R1=1420 refs=2
+118: (bf) r3 = r9                     ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+119: (0f) r3 += r1                    ; R1=1420 R3=trusted_ptr_task_struct(off=1420) refs=2
+120: (bf) r1 = r10                    ; R1=fp0 R10=fp0 refs=2
+121: (07) r1 += -8                    ; R1=fp-8 refs=2
+; e->policy      = BPF_CORE_READ(t, policy); @ scheduler_deep_tracer.bpf.c:177
+122: (b4) w2 = 4                      ; R2=4 refs=2
+123: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-8=????mmmm refs=2
+124: (61) r1 = *(u32 *)(r10 -8)       ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R10=fp0 fp-8=????mmmm refs=2
+125: (63) *(u32 *)(r7 +332) = r1      ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+126: (bf) r1 = r10                    ; R1=fp0 R10=fp0 refs=2
+127: (07) r1 += -8                    ; R1=fp-8 refs=2
+; e->nice        = (__s32)BPF_CORE_READ(t, static_prio) - 120; @ scheduler_deep_tracer.bpf.c:178
+128: (b4) w2 = 4                      ; R2=4 refs=2
+129: (bf) r3 = r6                     ; R3=trusted_ptr_task_struct(off=136) R6=trusted_ptr_task_struct(off=136) refs=2
+130: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-8=????mmmm refs=2
+131: (61) r1 = *(u32 *)(r10 -8)       ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R10=fp0 fp-8=????mmmm refs=2
+132: (b4) w2 = -1                     ; R2=0xffffffff refs=2
+; e->wake_cpu    = -1; @ scheduler_deep_tracer.bpf.c:179
+133: (63) *(u32 *)(r7 +360) = r2      ; R2=0xffffffff R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+; e->nice        = (__s32)BPF_CORE_READ(t, static_prio) - 120; @ scheduler_deep_tracer.bpf.c:178
+134: (04) w1 += -120                  ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) refs=2
+135: (63) *(u32 *)(r7 +336) = r1      ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+136: (b7) r1 = 2448                   ; R1=2448 refs=2
+137: (bf) r3 = r9                     ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+138: (0f) r3 += r1                    ; R1=2448 R3=trusted_ptr_task_struct(off=2448) refs=2
+; __builtin_memset(e, 0, sizeof(*e)); @ scheduler_deep_tracer.bpf.c:353
+139: (79) r1 = *(u64 *)(r10 -16)      ; R1=ringbuf_mem(ref_obj_id=2,sz=368) R10=fp0 fp-16=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+140: (07) r1 += 24                    ; R1=ringbuf_mem(ref_obj_id=2,off=24,sz=368) refs=2
+; bpf_core_read_str(e->comm, sizeof(e->comm), &t->comm); @ scheduler_deep_tracer.bpf.c:180
+141: (b4) w2 = 16                     ; R2=16 refs=2
+142: (85) call bpf_probe_read_kernel_str#115          ; R0=scalar(smin=smin32=-4095,smax=smax32=16) refs=2
+143: (b7) r1 = 312                    ; R1=312 refs=2
+144: (bf) r3 = r9                     ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+145: (0f) r3 += r1                    ; R1=312 R3=trusted_ptr_task_struct(off=312) refs=2
+146: (bf) r1 = r10                    ; R1=fp0 R10=fp0 refs=2
+147: (07) r1 += -8                    ; R1=fp-8 refs=2
+; e->vruntime              = BPF_CORE_READ(t, se.vruntime); @ scheduler_deep_tracer.bpf.c:182
+148: (b4) w2 = 8                      ; R2=8 refs=2
+149: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-8=mmmmmmmm refs=2
+150: (79) r1 = *(u64 *)(r10 -8)       ; R1=scalar() R10=fp0 fp-8=mmmmmmmm refs=2
+151: (7b) *(u64 *)(r7 +56) = r1       ; R1=scalar() R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+152: (b7) r1 = 288                    ; R1=288 refs=2
+153: (bf) r3 = r9                     ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+154: (0f) r3 += r1                    ; R1=288 R3=trusted_ptr_task_struct(off=288) refs=2
+155: (bf) r1 = r10                    ; R1=fp0 R10=fp0 refs=2
+156: (07) r1 += -8                    ; R1=fp-8 refs=2
+; e->exec_start            = BPF_CORE_READ(t, se.exec_start); @ scheduler_deep_tracer.bpf.c:183
+157: (b4) w2 = 8                      ; R2=8 refs=2
+158: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-8=mmmmmmmm refs=2
+159: (79) r1 = *(u64 *)(r10 -8)       ; R1=scalar() R10=fp0 fp-8=mmmmmmmm refs=2
+160: (7b) *(u64 *)(r7 +64) = r1       ; R1=scalar() R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+161: (b7) r1 = 296                    ; R1=296 refs=2
+162: (bf) r3 = r9                     ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+163: (0f) r3 += r1                    ; R1=296 R3=trusted_ptr_task_struct(off=296) refs=2
+164: (bf) r1 = r10                    ; R1=fp0 R10=fp0 refs=2
+165: (07) r1 += -8                    ; R1=fp-8 refs=2
+; e->sum_exec_runtime      = BPF_CORE_READ(t, se.sum_exec_runtime); @ scheduler_deep_tracer.bpf.c:184
+166: (b4) w2 = 8                      ; R2=8 refs=2
+167: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-8=mmmmmmmm refs=2
+168: (79) r1 = *(u64 *)(r10 -8)       ; R1=scalar() R10=fp0 fp-8=mmmmmmmm refs=2
+169: (7b) *(u64 *)(r7 +72) = r1       ; R1=scalar() R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+170: (b7) r1 = 304                    ; R1=304 refs=2
+171: (bf) r3 = r9                     ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+172: (0f) r3 += r1                    ; R1=304 R3=trusted_ptr_task_struct(off=304) refs=2
+173: (bf) r1 = r10                    ; R1=fp0 R10=fp0 refs=2
+174: (07) r1 += -8                    ; R1=fp-8 refs=2
+; e->prev_sum_exec_runtime = BPF_CORE_READ(t, se.prev_sum_exec_runtime); @ scheduler_deep_tracer.bpf.c:185
+175: (b4) w2 = 8                      ; R2=8 refs=2
+176: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-8=mmmmmmmm refs=2
+177: (79) r1 = *(u64 *)(r10 -8)       ; R1=scalar() R10=fp0 fp-8=mmmmmmmm refs=2
+178: (7b) *(u64 *)(r7 +80) = r1       ; R1=scalar() R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+179: (b7) r1 = 192                    ; R1=192 refs=2
+180: (bf) r3 = r9                     ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+181: (0f) r3 += r1                    ; R1=192 R3=trusted_ptr_task_struct(off=192) refs=2
+182: (bf) r1 = r10                    ; R1=fp0 R10=fp0 refs=2
+183: (07) r1 += -8                    ; R1=fp-8 refs=2
+; e->load_weight           = BPF_CORE_READ(t, se.load.weight); @ scheduler_deep_tracer.bpf.c:186
+184: (b4) w2 = 8                      ; R2=8 refs=2
+185: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-8=mmmmmmmm refs=2
+186: (79) r1 = *(u64 *)(r10 -8)       ; R1=scalar() R10=fp0 fp-8=mmmmmmmm refs=2
+187: (7b) *(u64 *)(r7 +104) = r1      ; R1=scalar() R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+188: (b7) r1 = 200                    ; R1=200 refs=2
+189: (bf) r3 = r9                     ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+190: (0f) r3 += r1                    ; R1=200 R3=trusted_ptr_task_struct(off=200) refs=2
+191: (bf) r1 = r10                    ; R1=fp0 R10=fp0 refs=2
+192: (07) r1 += -8                    ; R1=fp-8 refs=2
+; e->load_inv_weight       = BPF_CORE_READ(t, se.load.inv_weight); @ scheduler_deep_tracer.bpf.c:187
+193: (b4) w2 = 4                      ; R2=4 refs=2
+194: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-8=mmmmmmmm refs=2
+195: (61) r1 = *(u32 *)(r10 -8)       ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R10=fp0 fp-8=mmmmmmmm refs=2
+196: (63) *(u32 *)(r7 +112) = r1      ; R1=scalar(smin=0,smax=umax=0xffffffff,var_off=(0x0; 0xffffffff)) R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+197: (b7) r1 = 320                    ; R1=320 refs=2
+198: (bf) r3 = r9                     ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+199: (0f) r3 += r1                    ; R1=320 R3=trusted_ptr_task_struct(off=320) refs=2
+200: (bf) r1 = r10                    ; R1=fp0 R10=fp0 refs=2
+201: (07) r1 += -8                    ; R1=fp-8 refs=2
+; e->vlag  = BPF_CORE_READ(t, se.vlag); @ scheduler_deep_tracer.bpf.c:189
+202: (b4) w2 = 8                      ; R2=8 refs=2
+203: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-8=mmmmmmmm refs=2
+204: (79) r1 = *(u64 *)(r10 -8)       ; R1=scalar() R10=fp0 fp-8=mmmmmmmm refs=2
+205: (7b) *(u64 *)(r7 +88) = r1       ; R1=scalar() R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+206: (b7) r1 = 336                    ; R1=336 refs=2
+207: (bf) r3 = r9                     ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+208: (0f) r3 += r1                    ; R1=336 R3=trusted_ptr_task_struct(off=336) refs=2
+209: (bf) r1 = r10                    ; R1=fp0 R10=fp0 refs=2
+210: (07) r1 += -8                    ; R1=fp-8 refs=2
+; e->slice = BPF_CORE_READ(t, se.slice); @ scheduler_deep_tracer.bpf.c:190
+211: (b4) w2 = 8                      ; R2=8 refs=2
+212: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-8=mmmmmmmm refs=2
+213: (79) r1 = *(u64 *)(r10 -8)       ; R1=scalar() R10=fp0 fp-8=mmmmmmmm refs=2
+214: (7b) *(u64 *)(r7 +96) = r1       ; R1=scalar() R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+215: (b7) r1 = 280                    ; R1=280 refs=2
+216: (bf) r3 = r9                     ; R3=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+217: (0f) r3 += r1                    ; R1=280 R3=trusted_ptr_task_struct(off=280) refs=2
+218: (bf) r1 = r10                    ; R1=fp0 R10=fp0 refs=2
+219: (07) r1 += -8                    ; R1=fp-8 refs=2
+; e->on_rq = BPF_CORE_READ(t, se.on_rq); @ scheduler_deep_tracer.bpf.c:192
+220: (b4) w2 = 1                      ; R2=1 refs=2
+221: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-8=mmmmmmmm refs=2
+222: (71) r1 = *(u8 *)(r10 -8)        ; R1=scalar(smin=smin32=0,smax=umax=smax32=umax32=255,var_off=(0x0; 0xff)) R10=fp0 fp-8=mmmmmmmm refs=2
+; e->last_update_rq_clock = 0; @ scheduler_deep_tracer.bpf.c:194
+223: (7b) *(u64 *)(r7 +168) = r8      ; R7=ringbuf_mem(ref_obj_id=2,sz=368) R8=0 refs=2
+; e->on_rq = BPF_CORE_READ(t, se.on_rq); @ scheduler_deep_tracer.bpf.c:192
+224: (73) *(u8 *)(r7 +160) = r1       ; R1=scalar(smin=smin32=0,smax=umax=smax32=umax32=255,var_off=(0x0; 0xff)) R7=ringbuf_mem(ref_obj_id=2,sz=368) refs=2
+225: (b7) r1 = 368                    ; R1=368 refs=2
+226: (bf) r8 = r9                     ; R8=trusted_ptr_task_struct() R9=trusted_ptr_task_struct() refs=2
+227: (0f) r8 += r1                    ; R1=368 R8=trusted_ptr_task_struct(off=368) refs=2
+228: (bf) r1 = r10                    ; R1=fp0 R10=fp0 refs=2
+229: (07) r1 += -8                    ; R1=fp-8 refs=2
+; struct cfs_rq *cfs = BPF_CORE_READ(t, se.cfs_rq); @ scheduler_deep_tracer.bpf.c:196
+230: (b4) w2 = 8                      ; R2=8 refs=2
+231: (bf) r3 = r8                     ; R3=trusted_ptr_task_struct(off=368) R8=trusted_ptr_task_struct(off=368) refs=2
+232: (85) call bpf_probe_read_kernel#113      ; R0=scalar() fp-8=mmmmmmmm refs=2
+233: (79) r6 = *(u64 *)(r10 -8)       ; R6=scalar() R10=fp0 fp-8=mmmmmmmm refs=2
+; if (cfs) { @ scheduler_deep_tracer.bpf.c:197
+234: (15) if r6 == 0x0 goto pc+66     ; R6=scalar(umin=1) refs=2
+235: <invalid CO-RE relocation>
+failed to resolve CO-RE relocation <byte_off> [392] struct cfs_rq___co_min.min_vruntime (0:0 @ offset 0)
+processed 235 insns (limit 1000000) max_states_per_insn 0 total_states 11 peak_states 11 mark_read 0
+-- END PROG LOAD LOG --
+libbpf: prog 'handle_sched_switch': failed to load: -EINVAL
+libbpf: failed to load object 'scheduler_deep_tracer_bpf'
+libbpf: failed to load BPF skeleton 'scheduler_deep_tracer_bpf': -EINVAL
+Failed to load BPF skeleton: -22 (Invalid argument)
+Hint: run `make clean && make` on this same machine (need kernel BTF).
+      Do not copy .bpf.o from another OS/CPU; BPF is arch-specific.
