@@ -14,51 +14,15 @@
 #include <bpf/bpf_core_read.h>
 
 /*
- * CO-RE reads must compile against local BTF/vmlinux.h. Some trees expose an
- * incomplete struct cfs_rq, and newer kernels renamed several fields (e.g.
- * nr_running→nr_queued, h_nr_running→h_nr_queued, avg_vruntime→sum_w_vruntime).
- * Use small matching structs with preserve_access_index so Clang sees valid
- * members while libbpf relocates against the running kernel.
+ * cfs_rq CO-RE: On many Ubuntu/cloud kernels, libbpf fails to resolve
+ * relocations for cfs_rq fields (e.g. min_vruntime) even when vmlinux.h
+ * compiles — BTF may omit or mismatch scheduler internals. Single-field
+ * "flavor" structs made load fail with:
+ *   failed to resolve CO-RE relocation ... struct cfs_rq___co_min.min_vruntime
+ * We therefore do not BPF_CORE_READ cfs_rq members; cfs_* and rq_* stats
+ * stay zero. sched_entity fields above (vruntime, load, etc.) still work.
+ * Regenerate vmlinux.h on the running machine: make clean && make
  */
-struct cfs_rq___co_min {
-	unsigned long min_vruntime;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_exec {
-	__u64 exec_clock;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_load {
-	struct load_weight load;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_nr_run {
-	unsigned int nr_running;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_nr_q {
-	unsigned int nr_queued;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_hnr_old {
-	unsigned int h_nr_running;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_hnr_q {
-	unsigned int h_nr_queued;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_avg {
-	__s64 avg_vruntime;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_sumw {
-	__s64 sum_w_vruntime;
-} __attribute__((preserve_access_index));
-
-struct cfs_rq___co_rq {
-	struct rq *rq;
-} __attribute__((preserve_access_index));
 
 #define TASK_COMM_LEN 16
 #define FILENAME_LEN  64
@@ -193,38 +157,6 @@ static __always_inline void fill_se(struct sched_event *e,
     
     e->last_update_rq_clock = 0;
 
-    struct cfs_rq *cfs = BPF_CORE_READ(t, se.cfs_rq);
-    if (cfs) {
-        const void *cfsp = (const void *)cfs;
-
-        e->cfs_min_vruntime = BPF_CORE_READ((struct cfs_rq___co_min *)cfsp,
-                                            min_vruntime);
-        if (bpf_core_field_exists(struct cfs_rq___co_nr_q, nr_queued))
-            e->cfs_nr_running = BPF_CORE_READ((struct cfs_rq___co_nr_q *)cfsp,
-                                              nr_queued);
-        else
-            e->cfs_nr_running = BPF_CORE_READ((struct cfs_rq___co_nr_run *)cfsp,
-                                              nr_running);
-
-        if (bpf_core_field_exists(struct cfs_rq___co_hnr_q, h_nr_queued))
-            e->cfs_h_nr_running = BPF_CORE_READ((struct cfs_rq___co_hnr_q *)cfsp,
-                                                h_nr_queued);
-        else
-            e->cfs_h_nr_running =
-                BPF_CORE_READ((struct cfs_rq___co_hnr_old *)cfsp, h_nr_running);
-
-        e->cfs_exec_clock = BPF_CORE_READ((struct cfs_rq___co_exec *)cfsp,
-                                          exec_clock);
-        e->cfs_load_weight = BPF_CORE_READ((struct cfs_rq___co_load *)cfsp,
-                                           load.weight);
-        if (bpf_core_field_exists(struct cfs_rq___co_sumw, sum_w_vruntime))
-            e->cfs_avg_vruntime =
-                BPF_CORE_READ((struct cfs_rq___co_sumw *)cfsp, sum_w_vruntime);
-        else
-            e->cfs_avg_vruntime =
-                BPF_CORE_READ((struct cfs_rq___co_avg *)cfsp, avg_vruntime);
-    }
-
     e->task_state = BPF_CORE_READ(t, __state);
 }
 
@@ -242,16 +174,13 @@ static __always_inline void fill_prev_se(struct sched_event *e,
     bpf_core_read_str(e->prev_comm, sizeof(e->prev_comm), &t->comm);
 }
 
-/* Fills rq-level stats (nr_running, clock) from the task's cfs_rq->rq. */
+/* rq stats were via cfs_rq->rq; omitted when cfs_rq CO-RE is unreliable (see hdr). */
 static __always_inline void fill_rq(struct sched_event *e,
                                     struct task_struct *t)
 {
-    struct cfs_rq *cfs = BPF_CORE_READ(t, se.cfs_rq);
-    if (!cfs) return;
-    struct rq *rq = BPF_CORE_READ((struct cfs_rq___co_rq *)cfs, rq);
-    if (!rq) return;
-    e->rq_nr_running = BPF_CORE_READ(rq, nr_running);
-    e->rq_clock      = BPF_CORE_READ(rq, clock);
+    (void)t;
+    e->rq_nr_running = 0;
+    e->rq_clock = 0;
 }
 
 /* Copies current task's pid/tgid/comm into a wait_queue_info. */
